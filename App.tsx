@@ -7,9 +7,10 @@ import Services from './components/Services';
 import ServicePage from './components/ServicePage';
 import PortfolioCarousel from './components/PortfolioCarousel';
 import About from './components/About';
+import YouTubeVideos from './components/YouTubeVideos';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { SERVICES_DATA } from './constants';
+import { SERVICES_DATA, YOUTUBE_VIDEOS } from './constants';
 import type { Section } from './types';
 import type { Service } from './types';
 
@@ -37,6 +38,7 @@ const AppContent: React.FC = () => {
     gallery: useRef<HTMLDivElement>(null),
     services: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),
+    videos: useRef<HTMLDivElement>(null),
     contact: useRef<HTMLDivElement>(null),
   };
 
@@ -135,6 +137,7 @@ const AppContent: React.FC = () => {
         <Showcase />
         <div id="services" ref={sectionsRef.services}><Services /></div>
         <PortfolioCarousel />
+        <div id="videos" ref={sectionsRef.videos}><YouTubeVideos videos={YOUTUBE_VIDEOS} /></div>
         <div id="about" ref={sectionsRef.about}><About /></div>
         <div id="contact" ref={sectionsRef.contact}><Contact /></div>
       </main>

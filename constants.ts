@@ -1,4 +1,4 @@
-import type { HeroSlide, Photo, Service, TeamMember, Branch } from './types';
+import type { HeroSlide, Photo, Service, TeamMember, Branch, YouTubeVideo } from './types';
 
 export const HERO_SLIDES: HeroSlide[] = [
   { id: 1, src: '/IMG_3061.jpg', alt: 'Beautiful wedding moment captured' },
@@ -202,6 +202,54 @@ export const TEAM_DATA: TeamMember[] = [
     role: 'Professional Candid Photographer & CEO of Baby Clicks Studio', 
     description: 'Mr. Manikanta Kumar is a professional candid photographer and CEO of Baby Clicks Studio.',
     imageSrc: '/Mr_manikanta.png' 
+  },
+];
+
+export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
+  { 
+    id: '1', 
+    url: 'https://youtu.be/PwYww2lJruc?si=e0s7mZHpHJql-LfN',
+    title: 'Wedding Photography Video 1'
+  },
+  { 
+    id: '2', 
+    url: 'https://youtu.be/oBxBoFLXuYo?si=2ud4FCkjynX1m9Ya',
+    title: 'Wedding Photography Video 2'
+  },
+  { 
+    id: '3', 
+    url: 'https://youtu.be/wnpfmgr5crM?si=xiUvs8L5inL17Ce6',
+    title: 'Wedding Photography Video 3'
+  },
+  { 
+    id: '4', 
+    url: 'https://youtu.be/JtHqeyW7owo?si=jIiOScAjoWYE0VHE',
+    title: 'Wedding Photography Video 4'
+  },
+  { 
+    id: '5', 
+    url: 'https://youtu.be/rLfpoqMQk6I?si=Bj-oXLZRGBG7KpCV',
+    title: 'Wedding Photography Video 5'
+  },
+  { 
+    id: '6', 
+    url: 'https://youtu.be/qkMR7FAu9x8?si=v71Ipb_5VHNhuxtB',
+    title: 'Wedding Photography Video 6'
+  },
+  { 
+    id: '7', 
+    url: 'https://youtu.be/MQQ-KP6Ga1s?si=0gufwfRMAsNxUeTp',
+    title: 'Wedding Photography Video 7'
+  },
+  { 
+    id: '8', 
+    url: 'https://youtu.be/HjK_4YKyOzY?si=Rg5k8klfxBop1YbB',
+    title: 'Wedding Photography Video 8'
+  },
+  { 
+    id: '9', 
+    url: 'https://youtu.be/h_Z6smgUfBo?si=l2IrI9wFCiZ-cHYI',
+    title: 'Wedding Photography Video 9'
   },
 ];
 

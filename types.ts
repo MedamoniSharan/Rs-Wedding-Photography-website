@@ -36,4 +36,10 @@ export interface Branch {
   mapLink?: string;
 }
 
-export type Section = 'home' | 'gallery' | 'services' | 'about' | 'contact';
+export interface YouTubeVideo {
+  id: string;
+  url: string;
+  title?: string;
+}
+
+export type Section = 'home' | 'gallery' | 'services' | 'about' | 'contact' | 'videos';

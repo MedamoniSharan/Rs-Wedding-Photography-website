@@ -55,6 +55,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
     { section: 'gallery', label: 'Gallery' },
     { section: 'services', label: 'Services' },
     { section: 'about', label: 'About' },
+    { section: 'videos', label: 'Videos' },
     { section: 'contact', label: 'Contact' },
   ];
 
