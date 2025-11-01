@@ -23,6 +23,7 @@ export interface Service {
 export interface TeamMember {
   name: string;
   role: string;
+  description?: string;
   imageSrc: string;
 }
 

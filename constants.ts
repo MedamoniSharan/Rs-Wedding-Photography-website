@@ -161,10 +161,48 @@ export const SERVICES_DATA: Service[] = [
 
 
 export const TEAM_DATA: TeamMember[] = [
-  { name: 'Rohan Sharma', role: 'Lead Photographer & Founder', imageSrc: 'https://picsum.photos/seed/team1/500/500' },
-  { name: 'Priya Sharma', role: 'Cinematographer', imageSrc: 'https://picsum.photos/seed/team2/500/500' },
-  { name: 'Rohan Verma', role: 'Drone Specialist', imageSrc: 'https://picsum.photos/seed/team3/500/500' },
-  { name: 'Anjali Desai', role: 'Editor & Retoucher', imageSrc: 'https://picsum.photos/seed/team4/500/500' },
+  { 
+    name: 'Baji', 
+    role: 'Album Designer & Photographer', 
+    description: 'Baji is a talented album designer and photographer known for his creative layouts and eye for visual storytelling.',
+    imageSrc: '/baji.png' 
+  },
+  { 
+    name: 'Ajay Kumar', 
+    role: 'Cinematographer & Teaser Maker', 
+    description: 'Ajay Kumar is a creative cinematographer and teaser maker known for his dynamic visuals and modern storytelling style.',
+    imageSrc: '/Ajay_kumar.png' 
+  },
+  { 
+    name: 'Deepak Kumar', 
+    role: 'Professional Video Editor & Traditional Videographer', 
+    description: 'Deepak Kumar is a skilled video editor and traditional videographer known for crafting visually engaging stories with precision and creativity.',
+    imageSrc: '/deepak.png' 
+  },
+  { 
+    name: 'Ranga Surya (Chinnababu Garu)', 
+    role: 'Founder & CEO', 
+    description: 'With over 30 years of experience in photography, Mr. Chinnababu Garu (Ranga Surya) is a renowned professional known for his excellence in traditional photography. As the Vice President of the Photography Association, West Godavari District, he continues to inspire creativity and uphold the art of timeless photography.',
+    imageSrc: '/ranga_surya.jpeg' 
+  },
+  { 
+    name: 'K. Mahesh', 
+    role: 'Cinematographer', 
+    description: 'K. Mahesh is a talented cinematographer known for his creative visuals and storytelling through the lens.',
+    imageSrc: '/mahesh.png' 
+  },
+  { 
+    name: 'Mr. Jagath Krishna', 
+    role: 'Managing Director', 
+    description: 'Managing Director of Ranga Surya Photography, operations and ensures every project meets the brand\'s creative and professional standards.',
+    imageSrc: '/jagath_krishna.png' 
+  },
+  { 
+    name: 'Mr. Manikanta Kumar', 
+    role: 'Professional Candid Photographer & CEO of Baby Clicks Studio', 
+    description: 'Mr. Manikanta Kumar is a professional candid photographer and CEO of Baby Clicks Studio.',
+    imageSrc: '/Mr_manikanta.png' 
+  },
 ];
 
 export const BRANCHES_DATA: Branch[] = [
