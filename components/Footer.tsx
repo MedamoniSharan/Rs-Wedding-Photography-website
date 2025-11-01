@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
             onClick={() => scrollToSection('home')}
             >
              <img 
-               src={theme === 'dark' ? "/logo-white.png" : "/logo-dark.png"} 
+               src={theme === 'dark' ? "/logo-white.png" : "/white_logo_design12.png"} 
                alt="RS Wedding Logo" 
                className="h-12 w-auto" 
              />
