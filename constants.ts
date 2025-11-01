@@ -123,31 +123,37 @@ export const CAROUSEL_IMAGES: HeroSlide[] = [
 
 export const SERVICES_DATA: Service[] = [
   {
+    id: 'wedding-photography',
     title: 'Wedding Photography',
     description: "Capture your special day with natural, unposed moments that tell your unique love story. Our candid approach ensures every genuine emotion, laughter, and tear is beautifully preserved for generations to come.",
     imageSrc: '/RS_P8492.jpg',
   },
   {
+    id: 'pre-wedding-photography',
     title: 'Pre-Wedding Photography',
     description: "From romantic pre-wedding shoots to intimate post-wedding sessions, we create timeless memories. Whether it's a destination shoot or a local session, we bring cinematic vision to every frame.",
     imageSrc: '/IMG_2016.JPG',
   },
   {
+    id: 'candid-photography',
     title: 'Candid Photography',
     description: "Capture authentic moments with our candid photography services. We specialize in documenting real emotions, spontaneous interactions, and genuine expressions that tell your story naturally.",
     imageSrc: '/RS_P8572.jpg',
   },
   {
+    id: 'drone-shoots',
     title: 'Drone Shoots',
     description: "Elevate your events with stunning aerial cinematography. Our drone specialists capture breathtaking overhead shots and unique perspectives that showcase the grandeur of your special moments.",
     imageSrc: '/IMG_3431.JPG',
   },
   {
+    id: 'half-saree-photography',
     title: 'Half Saree Photography',
     description: "Celebrate traditional ceremonies with artistic flair. We specialize in capturing the rich cultural heritage of Andhra Pradesh weddings, from the vibrant half-saree ceremony to the sacred dothi function.",
     imageSrc: '/IMG_2014.JPG',
   },
   {
+    id: 'event-photography',
     title: 'Event Photography',
     description: "Document your corporate events, birthday celebrations, and special occasions with professional photography. We ensure every important moment is captured with style and precision.",
     imageSrc: '/RS_P8513.jpg',

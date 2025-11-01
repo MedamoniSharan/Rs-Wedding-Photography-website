@@ -14,6 +14,7 @@ export interface Photo {
 }
 
 export interface Service {
+  id?: string;
   title: string;
   description: string;
   imageSrc: string;

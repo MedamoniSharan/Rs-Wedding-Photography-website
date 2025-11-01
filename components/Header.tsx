@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { Section } from '../types';
 import { useTheme } from '../App';
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from './icons';
+import { SERVICES_DATA } from '../constants';
 
 interface HeaderProps {
   activeSection: Section;
@@ -35,18 +36,19 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   const { theme, toggleTheme } = useTheme();
 
   const handleLinkClick = (section: Section) => {
+    if (section !== 'services') {
+      window.location.hash = '';
+    }
     scrollToSection(section);
     setIsMobileMenuOpen(false);
   };
 
-  const servicesItems = [
-    { label: 'Wedding Photography', section: 'services' as Section },
-    { label: 'Pre-Wedding Photography', section: 'services' as Section },
-    { label: 'Candid Photography', section: 'services' as Section },
-    { label: 'Drone Shoots', section: 'services' as Section },
-    { label: 'Half Saree Photography', section: 'services' as Section },
-    { label: 'Event Photography', section: 'services' as Section },
-  ];
+  const handleServiceClick = (serviceId: string) => {
+    window.location.hash = serviceId;
+    setIsMobileMenuOpen(false);
+    setIsServicesDropdownOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const navLinks: { section: Section; label: string }[] = [
     { section: 'home', label: 'Home' },
@@ -89,13 +91,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
                     ></span>
                   </button>
                   <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-charcoal-gray rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden">
-                    {servicesItems.map((item, index) => (
+                    {SERVICES_DATA.map((service) => (
                       <button
-                        key={index}
-                        onClick={() => scrollToSection(item.section)}
+                        key={service.id}
+                        onClick={() => handleServiceClick(service.id || '')}
                         className="w-full px-4 py-3 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-golden-beige hover:text-white dark:hover:text-white transition-colors duration-200 border-b border-gray-100 dark:border-gray-700 last:border-b-0"
                       >
-                        {item.label}
+                        {service.title}
                       </button>
                     ))}
                   </div>
@@ -129,17 +131,57 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <nav className="flex flex-col items-center pb-4 px-6">
-            {navLinks.map(link => (
-               <button
-                key={link.section}
-                onClick={() => handleLinkClick(link.section)}
-                className={`py-3 w-full text-center text-lg uppercase tracking-widest transition-colors duration-200 rounded-md ${
-                  activeSection === link.section ? 'text-golden-beige bg-black/10 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-black/20'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map(link => {
+              if (link.section === 'services') {
+                return (
+                  <div key={link.section} className="w-full">
+                    <button
+                      onClick={() => {
+                        scrollToSection('services');
+                        setIsServicesDropdownOpen(!isServicesDropdownOpen);
+                      }}
+                      className={`py-3 w-full text-center text-lg uppercase tracking-widest transition-colors duration-200 rounded-md flex items-center justify-center gap-2 ${
+                        activeSection === link.section ? 'text-golden-beige bg-black/10 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-black/20'
+                      }`}
+                    >
+                      {link.label}
+                      <svg 
+                        className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {isServicesDropdownOpen && (
+                      <div className="pl-4 mt-2 space-y-1">
+                        {SERVICES_DATA.map((service) => (
+                          <button
+                            key={service.id}
+                            onClick={() => handleServiceClick(service.id || '')}
+                            className="w-full py-2 text-left text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200"
+                          >
+                            {service.title}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              return (
+                <button
+                  key={link.section}
+                  onClick={() => handleLinkClick(link.section)}
+                  className={`py-3 w-full text-center text-lg uppercase tracking-widest transition-colors duration-200 rounded-md ${
+                    activeSection === link.section ? 'text-golden-beige bg-black/10 dark:bg-black/30' : 'text-gray-700 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-black/20'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
           </nav>
         </div>
       )}
