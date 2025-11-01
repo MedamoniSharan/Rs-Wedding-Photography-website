@@ -123,24 +123,34 @@ export const CAROUSEL_IMAGES: HeroSlide[] = [
 
 export const SERVICES_DATA: Service[] = [
   {
-    title: 'Candid Wedding Photography',
-    description: "You're getting married or your family members. Awesome! Choosing the right candid wedding photographer is one of the most important...",
+    title: 'Wedding Photography',
+    description: "Capture your special day with natural, unposed moments that tell your unique love story. Our candid approach ensures every genuine emotion, laughter, and tear is beautifully preserved for generations to come.",
     imageSrc: '/RS_P8492.jpg',
   },
   {
-    title: 'Half Saree – Dothi Function',
-    description: "Saree/Dothi Ceremony Stories PixelMatrix Photography is one of the Best Photography in Hyderabad that specializes in capturing the beauty and...",
-    imageSrc: '/IMG_2014.JPG',
-  },
-  {
-    title: 'Pre And Post Wedding Photography',
-    description: "At PixelMatrix Studio, we understand that your wedding is more than just an event—it's a celebration of love, emotion, and...",
+    title: 'Pre-Wedding Photography',
+    description: "From romantic pre-wedding shoots to intimate post-wedding sessions, we create timeless memories. Whether it's a destination shoot or a local session, we bring cinematic vision to every frame.",
     imageSrc: '/IMG_2016.JPG',
   },
   {
-    title: 'Cakesmash/Babyshoot/Newborn',
-    description: "Cake smash photography: Everything you wanted to know Some trends in photography come and go. Before you even blink, it's...",
-    imageSrc: '/IMG_3061.JPG',
+    title: 'Candid Photography',
+    description: "Capture authentic moments with our candid photography services. We specialize in documenting real emotions, spontaneous interactions, and genuine expressions that tell your story naturally.",
+    imageSrc: '/RS_P8572.jpg',
+  },
+  {
+    title: 'Drone Shoots',
+    description: "Elevate your events with stunning aerial cinematography. Our drone specialists capture breathtaking overhead shots and unique perspectives that showcase the grandeur of your special moments.",
+    imageSrc: '/IMG_3431.JPG',
+  },
+  {
+    title: 'Half Saree Photography',
+    description: "Celebrate traditional ceremonies with artistic flair. We specialize in capturing the rich cultural heritage of Andhra Pradesh weddings, from the vibrant half-saree ceremony to the sacred dothi function.",
+    imageSrc: '/IMG_2014.JPG',
+  },
+  {
+    title: 'Event Photography',
+    description: "Document your corporate events, birthday celebrations, and special occasions with professional photography. We ensure every important moment is captured with style and precision.",
+    imageSrc: '/RS_P8513.jpg',
   },
 ];
 
@@ -153,6 +163,14 @@ export const TEAM_DATA: TeamMember[] = [
 ];
 
 export const BRANCHES_DATA: Branch[] = [
+  {
+    name: 'Hyderabad Branch',
+    specialty: 'Best Wedding Photography | Pre-wedding photoshoots | All Event Photographers',
+    address: 'Executive Towers, Mansa, Near Miyapur new police bhel, Kondapur, Telangana 500084',
+    phone: '+91 70369 29247',
+    email: 'hyderabad@rangasurya.in',
+    mapLink: 'https://www.google.com/maps/place/Hyderabad+Best+Wedding+photography+%7C+Pre-wedding+photoshoots+%7C+All+Event+Photographers+-+Ranga+surya+photography/@17.4627596,78.3502543,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb93ff06f8a2ad:0xbab020163fbd5dac!8m2!3d17.4627596!4d78.3502543!16s%2Fg%2F11jpm0l7zv?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D'
+  },
   {
     name: 'Vijayawada Branch',
     specialty: 'Best Wedding Photographers | Pre-wedding cinematographer',
