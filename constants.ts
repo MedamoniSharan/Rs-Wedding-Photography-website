@@ -82,7 +82,6 @@ export const SHOWCASE_IMAGES: string[] = [
   '/RS_P8572.jpg',
   '/RS_P8610.jpg',
   '/RS_P82834.jpg',
-  '/PHOTO-2024-05-19-19-47-16.jpg',
   '/IMG_2014.JPG',
   '/IMG_2016.JPG',
   '/IMG_3061.JPG',
