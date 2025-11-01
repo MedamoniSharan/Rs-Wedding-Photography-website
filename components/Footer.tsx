@@ -35,6 +35,20 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
             © {new Date().getFullYear()} RS Wedding. All Rights Reserved.
           </p>
         </div>
+        
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-gray-500 dark:text-gray-400 text-center">
+            <span>Wedding Photographer in Hyderabad</span>
+            <span className="hidden md:inline">•</span>
+            <span>Wedding Photographer in Vijayawada</span>
+            <span className="hidden md:inline">•</span>
+            <span>Wedding Photographer in Vizag</span>
+            <span className="hidden md:inline">•</span>
+            <span>Wedding Photographer in Bhimavaram</span>
+            <span className="hidden md:inline">•</span>
+            <span>Wedding Photographer in Rajahmundry</span>
+          </div>
+        </div>
       </div>
     </footer>
   );
