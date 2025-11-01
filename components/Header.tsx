@@ -31,12 +31,22 @@ const NavLink: React.FC<{
 
 const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   const handleLinkClick = (section: Section) => {
     scrollToSection(section);
     setIsMobileMenuOpen(false);
   };
+
+  const servicesItems = [
+    { label: 'Wedding Photography', section: 'services' as Section },
+    { label: 'Pre-Wedding Photography', section: 'services' as Section },
+    { label: 'Candid Photography', section: 'services' as Section },
+    { label: 'Drone Shoots', section: 'services' as Section },
+    { label: 'Half Saree Photography', section: 'services' as Section },
+    { label: 'Event Photography', section: 'services' as Section },
+  ];
 
   const navLinks: { section: Section; label: string }[] = [
     { section: 'home', label: 'Home' },
@@ -61,11 +71,43 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-2">
-          {navLinks.map(link => (
-            <NavLink key={link.section} section={link.section} activeSection={activeSection} onClick={handleLinkClick}>
-              {link.label}
-            </NavLink>
-          ))}
+          {navLinks.map(link => {
+            if (link.section === 'services') {
+              return (
+                <div key={link.section} className="relative group">
+                  <button
+                    onClick={() => scrollToSection('services')}
+                    className={`px-4 py-2 text-sm font-medium transition-colors duration-300 relative uppercase tracking-widest ${
+                      activeSection === 'services' ? 'text-golden-beige' : 'text-gray-700 dark:text-gray-300 hover:text-golden-beige'
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-golden-beige transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                        activeSection === 'services' ? 'scale-x-100' : ''
+                      }`}
+                    ></span>
+                  </button>
+                  <div className="absolute left-0 mt-2 w-56 bg-white dark:bg-charcoal-gray rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    {servicesItems.map((item, index) => (
+                      <button
+                        key={index}
+                        onClick={() => scrollToSection(item.section)}
+                        className="w-full px-4 py-3 text-left text-sm text-gray-700 dark:text-gray-300 hover:bg-golden-beige hover:text-white dark:hover:text-white transition-colors duration-200 border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <NavLink key={link.section} section={link.section} activeSection={activeSection} onClick={handleLinkClick}>
+                {link.label}
+              </NavLink>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
