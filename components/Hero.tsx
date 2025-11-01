@@ -42,8 +42,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             </h1>
         </div>
         <div className="overflow-hidden mb-8">
-            <p className="text-3xl md:text-4xl lg:text-5xl text-golden-beige font-lato font-bold animate-text-reveal-delayed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
-                Perfectly Captured.
+            <p className="text-2xl md:text-3xl lg:text-4xl text-golden-beige font-lato font-normal animate-text-reveal-delayed italic" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
+                Where emotion meets perfection — welcome to Ranga Surya Photography.
             </p>
         </div>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up">
