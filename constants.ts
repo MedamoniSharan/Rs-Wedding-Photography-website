@@ -222,11 +222,6 @@ export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
     title: 'Wedding Photography Video 3'
   },
   { 
-    id: '4', 
-    url: 'https://youtu.be/JtHqeyW7owo?si=jIiOScAjoWYE0VHE',
-    title: 'Wedding Photography Video 4'
-  },
-  { 
     id: '5', 
     url: 'https://youtu.be/rLfpoqMQk6I?si=Bj-oXLZRGBG7KpCV',
     title: 'Wedding Photography Video 5'
