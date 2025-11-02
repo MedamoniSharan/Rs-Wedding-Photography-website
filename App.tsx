@@ -6,7 +6,7 @@ import Showcase from './components/Showcase';
 import Services from './components/Services';
 import ServicePage from './components/ServicePage';
 import PortfolioCarousel from './components/PortfolioCarousel';
-import About from './components/About';
+import AboutPage from './components/AboutPage';
 import YouTubeVideos from './components/YouTubeVideos';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -33,12 +33,12 @@ export const useTheme = () => {
 const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('home');
   const [currentService, setCurrentService] = useState<Service | null>(null);
+  const [showAboutPage, setShowAboutPage] = useState<boolean>(false);
   
   const sectionsRef = {
     home: useRef<HTMLDivElement>(null),
     gallery: useRef<HTMLDivElement>(null),
     services: useRef<HTMLDivElement>(null),
-    about: useRef<HTMLDivElement>(null),
     videos: useRef<HTMLDivElement>(null),
     contact: useRef<HTMLDivElement>(null),
   };
@@ -47,15 +47,24 @@ const AppContent: React.FC = () => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
       if (hash) {
-        const service = SERVICES_DATA.find(s => s.id === hash);
-        if (service) {
-          setCurrentService(service);
+        if (hash === 'about') {
+          setShowAboutPage(true);
+          setCurrentService(null);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-          setCurrentService(null);
+          const service = SERVICES_DATA.find(s => s.id === hash);
+          if (service) {
+            setCurrentService(service);
+            setShowAboutPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            setCurrentService(null);
+            setShowAboutPage(false);
+          }
         }
       } else {
         setCurrentService(null);
+        setShowAboutPage(false);
       }
     };
 
@@ -100,6 +109,14 @@ const AppContent: React.FC = () => {
     setCurrentService(null);
     setTimeout(() => {
       scrollToSection('services');
+    }, 100);
+  };
+
+  const handleBackToHome = () => {
+    window.location.hash = '';
+    setShowAboutPage(false);
+    setTimeout(() => {
+      scrollToSection('home');
     }, 100);
   };
 
@@ -171,6 +188,20 @@ const AppContent: React.FC = () => {
     );
   }
 
+  if (showAboutPage) {
+    return (
+      <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+        <Header activeSection="about" scrollToSection={scrollToSection} />
+        <AboutPage 
+          onBack={handleBackToHome}
+          scrollToSection={scrollToSection}
+        />
+        <Footer scrollToSection={scrollToSection} />
+        <FloatingWhatsApp />
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
@@ -181,7 +212,6 @@ const AppContent: React.FC = () => {
         <div id="services" ref={sectionsRef.services}><Services /></div>
         <PortfolioCarousel />
         <div id="videos" ref={sectionsRef.videos}><YouTubeVideos videos={YOUTUBE_VIDEOS} /></div>
-        <div id="about" ref={sectionsRef.about}><About /></div>
         <div id="contact" ref={sectionsRef.contact}><Contact /></div>
       </main>
       <Footer scrollToSection={scrollToSection} />

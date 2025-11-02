@@ -84,7 +84,10 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection('about')}
+                  onClick={() => {
+                    window.location.hash = 'about';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
                 >
                   About

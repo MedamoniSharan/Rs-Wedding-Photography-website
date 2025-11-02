@@ -36,10 +36,15 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   const { theme, toggleTheme } = useTheme();
 
   const handleLinkClick = (section: Section) => {
-    if (section !== 'services') {
+    if (section === 'about') {
+      window.location.hash = 'about';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (section !== 'services') {
       window.location.hash = '';
+      scrollToSection(section);
+    } else {
+      scrollToSection(section);
     }
-    scrollToSection(section);
     setIsMobileMenuOpen(false);
   };
 
