@@ -1,4 +1,4 @@
-import type { HeroSlide, Photo, Service, TeamMember, Branch, YouTubeVideo } from './types';
+import type { HeroSlide, Photo, Service, TeamMember, Branch, YouTubeVideo, Testimonial, FAQ } from './types';
 
 export const HERO_SLIDES: HeroSlide[] = [
   { id: 1, src: '/IMG_3061.jpg', alt: 'Beautiful wedding moment captured' },
@@ -367,5 +367,63 @@ export const BRANCHES_DATA: Branch[] = [
     phone: '+91 94403 28796',
     email: 'bhimavaram@rangasurya.in',
     mapLink: 'https://maps.app.goo.gl/1Q6Vk9MAgp4tvKcLA?g_st=ipc'
+  }
+];
+
+export const CLIENT_REVIEWS: Testimonial[] = [
+  {
+    id: 'review-1',
+    url: 'https://youtube.com/shorts/a-qHxj8WprI?si=xypNzZ5ePnd4b2tw',
+    title: 'Client Review - Wedding Photography',
+    clientName: 'Happy Client'
+  },
+  {
+    id: 'review-2',
+    url: 'https://youtube.com/shorts/uFw_ApLxrBw?si=6KRG1qIH93hqV9VH',
+    title: 'Client Review - Pre-Wedding Photography',
+    clientName: 'Happy Client'
+  },
+];
+
+export const FAQ_DATA: FAQ[] = [
+  {
+    id: 'faq-1',
+    question: 'How far in advance should we book our wedding photography?',
+    answer: 'We recommend booking at least 3-6 months in advance to ensure availability for your special date. Popular wedding seasons may require earlier bookings. Contact us to check availability and secure your date.'
+  },
+  {
+    id: 'faq-2',
+    question: 'Do you provide photography services outside Hyderabad?',
+    answer: 'Yes! We provide wedding photography services across Andhra Pradesh, Telangana, and all over India. We have branches in Hyderabad, Vijayawada, Vizag, Rajahmundry, and Bhimavaram. We also travel to destination weddings.'
+  },
+  {
+    id: 'faq-3',
+    question: 'What is included in your wedding photography package?',
+    answer: 'Our packages typically include professional photography coverage, edited high-resolution images, online gallery access, and delivery within the agreed timeframe. Specific inclusions vary by package - please contact us for detailed package information.'
+  },
+  {
+    id: 'faq-4',
+    question: 'How long does it take to receive the edited photos?',
+    answer: 'We typically deliver edited wedding photos within 4-6 weeks after your event. For pre-wedding shoots, delivery is usually 2-3 weeks. Rush delivery options may be available upon request.'
+  },
+  {
+    id: 'faq-5',
+    question: 'Do you offer drone photography services?',
+    answer: 'Yes, we provide drone photography and cinematography services for weddings and events. Our certified drone operators capture stunning aerial shots that add a unique perspective to your wedding story.'
+  },
+  {
+    id: 'faq-6',
+    question: 'Can we customize our photography package?',
+    answer: 'Absolutely! We work with you to create a customized package that fits your needs, budget, and style preferences. Whether you need additional coverage hours, extra photographers, or specific services, we can tailor a package for you.'
+  },
+  {
+    id: 'faq-7',
+    question: 'What style of photography do you specialize in?',
+    answer: 'We specialize in both traditional and candid photography styles. Our approach blends artistic vision with authentic moments, capturing both posed portraits and spontaneous emotions to tell your complete wedding story.'
+  },
+  {
+    id: 'faq-8',
+    question: 'Do you provide both photography and videography services?',
+    answer: 'Yes, we offer both professional photography and cinematography services. Our team includes skilled photographers and videographers who work together to capture your special day from multiple angles.'
   }
 ];

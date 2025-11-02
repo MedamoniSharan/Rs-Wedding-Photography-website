@@ -8,10 +8,12 @@ import ServicePage from './components/ServicePage';
 import PortfolioCarousel from './components/PortfolioCarousel';
 import AboutPage from './components/AboutPage';
 import YouTubeVideos from './components/YouTubeVideos';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import { SERVICES_DATA, YOUTUBE_VIDEOS } from './constants';
+import { SERVICES_DATA, YOUTUBE_VIDEOS, CLIENT_REVIEWS, FAQ_DATA } from './constants';
 import type { Section } from './types';
 import type { Service } from './types';
 
@@ -212,6 +214,8 @@ const AppContent: React.FC = () => {
         <div id="services" ref={sectionsRef.services}><Services /></div>
         <PortfolioCarousel />
         <div id="videos" ref={sectionsRef.videos}><YouTubeVideos videos={YOUTUBE_VIDEOS} /></div>
+        <Testimonials testimonials={CLIENT_REVIEWS} />
+        <FAQ faqs={FAQ_DATA} />
         <div id="contact" ref={sectionsRef.contact}><Contact /></div>
       </main>
       <Footer scrollToSection={scrollToSection} />

@@ -43,3 +43,16 @@ export interface YouTubeVideo {
 }
 
 export type Section = 'home' | 'gallery' | 'services' | 'about' | 'contact' | 'videos';
+
+export interface Testimonial {
+  id: string;
+  url: string;
+  title?: string;
+  clientName?: string;
+}
+
+export interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
