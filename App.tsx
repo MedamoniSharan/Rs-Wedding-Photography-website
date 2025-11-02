@@ -108,7 +108,6 @@ const AppContent: React.FC = () => {
       'Wedding Photography': ['/RS_P7491.jpg', '/RS_P8283.jpg', '/RS_P8309.jpg', '/RS_P8492.jpg', '/RS_P8513.jpg', '/RS_P8572.jpg', '/RS_P8610.jpg', '/RS_P82834.jpg'],
       'Pre-Wedding Photography': ['/0I2A6395.jpg', '/0I2A6648.jpg', '/IMG_0283.JPG', '/IMG_2786.JPG', '/IMG_3588.JPG', '/IMG_3589.JPG', '/IMG_3595.JPG'],
       'Candid Photography': ['/RS_P7491.jpg', '/RS_P8572.jpg', '/IMG_3434.JPG', '/IMG_3061.JPG', '/RS_P8309.jpg'],
-      'Drone Shoots': ['/IMG_3431.JPG', '/IMG_5908.JPG', '/RS_P8283.jpg'],
       'Half Saree Photography': ['/IMG_2014.JPG', '/IMG_2016.JPG', '/RS_P8492.jpg'],
       'Event Photography': ['/RS_P8513.jpg', '/RS_P8610.jpg', '/PHOTO-2024-05-19-19-47-16.jpg', '/IMG_9113.JPG'],
       'Celebrate Photography': [

@@ -4,7 +4,7 @@ import type { Photo } from '../types';
 
 type Category = Photo['category'] | 'All';
 
-const categories: Category[] = ['All', 'Weddings', 'Pre-Wedding', 'Model Shoots', 'Events', 'Drone Shoots', 'Fashion'];
+const categories: Category[] = ['All', 'Wedding', 'Pre-Wedding', 'Haldi', 'Half Saree', 'Celebrate', 'Candid'];
 
 // Component for individual gallery items with scroll animation
 const GalleryItem: React.FC<{ photo: Photo; onClick: () => void; }> = ({ photo, onClick }) => {
