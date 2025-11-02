@@ -109,7 +109,37 @@ const AppContent: React.FC = () => {
       'Candid Photography': ['/RS_P7491.jpg', '/RS_P8572.jpg', '/IMG_3434.JPG', '/IMG_3061.JPG', '/RS_P8309.jpg'],
       'Drone Shoots': ['/IMG_3431.JPG', '/IMG_5908.JPG', '/RS_P8283.jpg'],
       'Half Saree Photography': ['/IMG_2014.JPG', '/IMG_2016.JPG', '/RS_P8492.jpg'],
-      'Event Photography': ['/RS_P8513.jpg', '/RS_P8610.jpg', '/PHOTO-2024-05-19-19-47-16.jpg', '/IMG_9113.JPG']
+      'Event Photography': ['/RS_P8513.jpg', '/RS_P8610.jpg', '/PHOTO-2024-05-19-19-47-16.jpg', '/IMG_9113.JPG'],
+      'Celebrate Photography': [
+        '/02377817-F29F-4B1B-B0E6-DFEC4D44DF9B.jpg',
+        '/0BEB5C88-A889-49C8-8C1F-7BD9F9562682.jpg',
+        '/482A1607-5AC2-415A-9F70-148ECAA35E3C.jpg',
+        '/4C5C35AA-9037-4E77-A80C-FF53C8ACFE71.jpg',
+        '/55888B26-40C0-4CA8-B803-42263D0CE76B.jpg',
+        '/64078515-2E5B-46A0-8596-50DD23915610.jpg',
+        '/65AA0718-7005-4A8D-BDAA-B9888ABAB6A1.jpg',
+        '/6EC1F929-8ACA-4F2B-8F54-E994DE7D1378.jpg',
+        '/7476BB13-83D5-4373-85DB-C89CF8F55BBD.jpg',
+        '/97D76C00-49C0-4F21-8177-C49BD16C9481.jpg',
+        '/A563F658-5DDD-4428-ADC0-43AB2CBF6E1B.jpg',
+        '/C80ADDD6-089C-43F5-9E6F-3146CA763534.jpg',
+        '/EEED92E7-65B9-49E0-93F1-01B243C79D7B.jpg',
+        '/F783AF91-B00D-4DF2-B28C-AEFE32E17B77.jpg',
+        '/IMG_1110.JPG',
+        '/IMG_1111.JPG',
+        '/IMG_1112.JPG',
+        '/IMG_1113.JPG',
+        '/IMG_1114.JPG',
+        '/IMG_1115.JPG',
+        '/IMG_1116.JPG',
+        '/IMG_1117.JPG',
+        '/IMG_4854.JPG',
+        '/IMG_9878.JPG',
+        '/IMG_9879.JPG',
+        '/IMG_9880.JPG',
+        '/IMG_9881.JPG',
+        '/IMG_9882.JPG'
+      ]
     };
     return serviceImageMap[serviceTitle] || [];
   };

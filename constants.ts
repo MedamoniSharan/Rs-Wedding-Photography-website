@@ -157,6 +157,12 @@ export const SERVICES_DATA: Service[] = [
     description: "Document your corporate events, birthday celebrations, and special occasions with professional photography. We ensure every important moment is captured with style and precision.",
     imageSrc: '/RS_P8513.jpg',
   },
+  {
+    id: 'celebrate-photography',
+    title: 'Celebrate Photography',
+    description: "Capture the joy and vibrancy of your celebrations with our creative photography. We specialize in documenting festive moments, parties, and special occasions with artistic vision and attention to detail.",
+    imageSrc: '/02377817-F29F-4B1B-B0E6-DFEC4D44DF9B.jpg',
+  },
 ];
 
 
