@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MailIcon, PhoneIcon, InstagramIcon, FacebookIcon, YouTubeIcon, LocationPinIcon } from './icons';
+import { MailIcon, PhoneIcon, InstagramIcon, FacebookIcon, YouTubeIcon, LocationPinIcon, WhatsAppIcon } from './icons';
 import { BRANCHES_DATA } from '../constants';
 import type { Branch } from '../types';
 
@@ -132,6 +132,7 @@ ${formState.message}
             <h3 className="text-xl font-poppins font-bold text-charcoal-gray dark:text-white mb-4">Follow Our Journey</h3>
             <div className="flex justify-center space-x-6">
                 <a href="https://www.instagram.com/ranga_surya_photography" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><InstagramIcon className="w-8 h-8" /></a>
+                <a href="https://wa.me/917036929247" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><WhatsAppIcon className="w-8 h-8" /></a>
                 <a href="#" aria-label="Facebook" className="text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><FacebookIcon className="w-8 h-8" /></a>
                 <a href="https://www.youtube.com/@rangasuryacinematography" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><YouTubeIcon className="w-8 h-8" /></a>
             </div>

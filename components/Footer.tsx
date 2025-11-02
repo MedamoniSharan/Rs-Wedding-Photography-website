@@ -1,5 +1,5 @@
 import React from 'react';
-import { InstagramIcon, FacebookIcon, YouTubeIcon } from './icons';
+import { InstagramIcon, FacebookIcon, YouTubeIcon, WhatsAppIcon } from './icons';
 import type { Section } from '../types';
 import { useTheme } from '../App';
 import { SERVICES_DATA } from '../constants';
@@ -33,6 +33,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
             </div>
             <div className="flex space-x-4 mt-4">
               <a href="https://www.instagram.com/ranga_surya_photography" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-500 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><InstagramIcon className="w-5 h-5" /></a>
+              <a href="https://wa.me/917036929247" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-gray-500 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><WhatsAppIcon className="w-5 h-5" /></a>
               <a href="#" aria-label="Facebook" className="text-gray-500 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><FacebookIcon className="w-5 h-5" /></a>
               <a href="https://www.youtube.com/@rangasuryacinematography" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-500 dark:text-gray-400 hover:text-golden-beige transition-colors duration-300"><YouTubeIcon className="w-5 h-5" /></a>
             </div>

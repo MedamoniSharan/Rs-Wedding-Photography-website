@@ -10,6 +10,7 @@ import About from './components/About';
 import YouTubeVideos from './components/YouTubeVideos';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { SERVICES_DATA, YOUTUBE_VIDEOS } from './constants';
 import type { Section } from './types';
 import type { Service } from './types';
@@ -154,6 +155,7 @@ const AppContent: React.FC = () => {
           onBack={handleBackToServices}
         />
         <Footer scrollToSection={scrollToSection} />
+        <FloatingWhatsApp />
       </div>
     );
   }
@@ -172,6 +174,7 @@ const AppContent: React.FC = () => {
         <div id="contact" ref={sectionsRef.contact}><Contact /></div>
       </main>
       <Footer scrollToSection={scrollToSection} />
+      <FloatingWhatsApp />
     </div>
   );
 };
