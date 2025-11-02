@@ -25,11 +25,30 @@ const AboutPage: React.FC<AboutPageProps> = ({ onBack, scrollToSection }) => {
             About Us
           </h1>
           <p className="text-2xl md:text-3xl font-poppins text-golden-beige mb-8 italic">
-            "We don't just take photos; we craft timeless stories."
+            Capturing Emotions, Creating Memories
           </p>
-          <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
-            Founded by Mr. Chinnababu Garu (Ranga Surya) with over 30 years of experience in photography, our studio is a collective of passionate storytellers who live and breathe photography and cinematography. We believe every moment has a story waiting to be told, and our mission is to capture that narrative with artistic vision and technical excellence. Based in Hyderabad and serving across Andhra Pradesh and Telangana, we travel to document your most cherished memories.
-          </p>
+          <div className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 space-y-6 text-left">
+            <p>
+              With over 30 years of experience, Ranga Surya Photography has become a trusted name in the world of wedding photography and candid photography. Founded by Mr. Ranga Surya (Chinnababu), our journey began with a passion for capturing life's most precious moments and turning them into timeless memories.
+            </p>
+            <p>
+              From the joy of a Pre-wedding photoshoots to the elegance of a Wedding photography, our team combines artistic vision with technical excellence to deliver photographs that truly speak from the heart. Every image we capture tells a story — your story filled with love, laughter, and unforgettable emotions.
+            </p>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-poppins font-black text-charcoal-gray dark:text-white mb-6 text-center">
+            Our Philosophy
+          </h2>
+          <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
+            <p>
+              We believe photography is more than just pictures — it's about preserving emotions that words can't describe. At Ranga Surya Photography, we work with limited clients each month so that every couple receives our complete attention, creativity, and dedication.
+            </p>
+            <p>
+              Our goal is to ensure your wedding photoshoot reflects your unique personality and style. Whether it's a grand celebration or an intimate gathering, we strive to make every moment beautifully memorable.
+            </p>
+          </div>
         </div>
 
         <div className="mb-16">

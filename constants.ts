@@ -197,13 +197,13 @@ export const SERVICES_DATA: Service[] = [
   {
     id: 'wedding-photography',
     title: 'Wedding Photography',
-    description: "Capture your special day with natural, unposed moments that tell your unique love story. Our candid approach ensures every genuine emotion, laughter, and tear is beautifully preserved for generations to come.",
+    description: "With over 30 years of experience, we specialize in transforming every emotion, smile, and ritual into timeless memories. Our team focuses on capturing every moment with authenticity and elegance across Andhra Pradesh, Telangana, and all over India.",
     imageSrc: '/RS_P8492.jpg',
   },
   {
     id: 'pre-wedding-photography',
     title: 'Pre-Wedding Photography',
-    description: "From romantic pre-wedding shoots to intimate post-wedding sessions, we create timeless memories. Whether it's a destination shoot or a local session, we bring cinematic vision to every frame.",
+    description: "With over 180+ pre-wedding shoots completed across India, our team creates cinematic love stories at the most stunning locations. From serene tea gardens of Munnar, Kerala to romantic landscapes across Andhra Pradesh and Telangana.",
     imageSrc: '/IMG_2016.JPG',
   },
   {
@@ -221,13 +221,13 @@ export const SERVICES_DATA: Service[] = [
   {
     id: 'haldi-photography',
     title: 'Haldi Photography',
-    description: "Capture the vibrant and joyous Haldi ceremony with our professional photography. We document this auspicious pre-wedding ritual with vibrant colors, beautiful traditions, and genuine moments of celebration.",
+    description: "The Haldi ceremony is one of the most heartfelt and joyful parts of every Indian wedding. Our experienced photographers specialize in Haldi photography, turning every splash of color and candid smile into a timeless memory with creative storytelling and technical precision.",
     imageSrc: '/259fd242-7274-4663-9da9-8b062a000ec9.jpg',
   },
   {
     id: 'event-photography',
     title: 'Event Photography',
-    description: "Document your corporate events, birthday celebrations, and special occasions with professional photography. We ensure every important moment is captured with style and precision.",
+    description: "We specialize in event photography that beautifully captures emotions, energy, and memories. We cover corporate events, housewarming ceremonies, baby showers, birthday celebrations, and family functions with professionalism and creativity.",
     imageSrc: '/RS_P8513.jpg',
   },
   {
