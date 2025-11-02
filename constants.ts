@@ -104,10 +104,22 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 70, src: '/IMG_7422.JPG', alt: 'Half saree highlights', category: 'Half Saree', location: 'Hyderabad', shootType: 'Ceremony' },
   { id: 71, src: '/IMG_8019.JPG', alt: 'Half saree moment', category: 'Half Saree', location: 'Hyderabad', shootType: 'Portrait' },
   
+  // Haldi Photos
+  { id: 72, src: '/259fd242-7274-4663-9da9-8b062a000ec9.jpg', alt: 'Haldi ceremony', category: 'Haldi', location: 'Hyderabad', shootType: 'Ceremony' },
+  { id: 73, src: '/52ff6597-98a2-4db0-b294-f5b5d9f8ebb2.jpg', alt: 'Haldi photography', category: 'Haldi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 74, src: '/62e61066-8be8-4ba6-924c-15af5dfe0007.jpg', alt: 'Haldi highlights', category: 'Haldi', location: 'Hyderabad', shootType: 'Ceremony' },
+  { id: 75, src: '/660ed3ea-6d8c-4221-995a-ee626ecd6455.jpg', alt: 'Haldi moment', category: 'Haldi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 76, src: '/9de2bf60-56dd-4552-9ed3-34462dab9b30.jpg', alt: 'Haldi ceremony', category: 'Haldi', location: 'Hyderabad', shootType: 'Ceremony' },
+  { id: 77, src: '/IMG_0482.JPG', alt: 'Haldi photography', category: 'Haldi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 78, src: '/IMG_0485.JPG', alt: 'Haldi highlights', category: 'Haldi', location: 'Hyderabad', shootType: 'Ceremony' },
+  { id: 79, src: '/IMG_0486.JPG', alt: 'Haldi moment', category: 'Haldi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 80, src: '/IMG_0487.JPG', alt: 'Haldi ceremony', category: 'Haldi', location: 'Hyderabad', shootType: 'Ceremony' },
+  { id: 81, src: '/IMG_0488.JPG', alt: 'Haldi photography', category: 'Haldi', location: 'Hyderabad', shootType: 'Portrait' },
+  
   // Candid Photos
-  { id: 72, src: '/IMG_2014.JPG', alt: 'Candid wedding moment', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
-  { id: 73, src: '/IMG_2016.JPG', alt: 'Candid portrait', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
-  { id: 74, src: '/IMG_3434.JPG', alt: 'Candid wedding day memories', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
+  { id: 82, src: '/IMG_2014.JPG', alt: 'Candid wedding moment', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
+  { id: 83, src: '/IMG_2016.JPG', alt: 'Candid portrait', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
+  { id: 84, src: '/IMG_3434.JPG', alt: 'Candid wedding day memories', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
 ];
 
 export const SHOWCASE_IMAGES: string[] = [
@@ -205,6 +217,12 @@ export const SERVICES_DATA: Service[] = [
     title: 'Half Saree Photography',
     description: "Celebrate traditional ceremonies with artistic flair. We specialize in capturing the rich cultural heritage of Andhra Pradesh weddings, from the vibrant half-saree ceremony to the sacred dothi function.",
     imageSrc: '/IMG_2014.JPG',
+  },
+  {
+    id: 'haldi-photography',
+    title: 'Haldi Photography',
+    description: "Capture the vibrant and joyous Haldi ceremony with our professional photography. We document this auspicious pre-wedding ritual with vibrant colors, beautiful traditions, and genuine moments of celebration.",
+    imageSrc: '/259fd242-7274-4663-9da9-8b062a000ec9.jpg',
   },
   {
     id: 'event-photography',
