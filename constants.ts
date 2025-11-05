@@ -215,7 +215,7 @@ export const SERVICES_DATA: Service[] = [
     id: 'half-saree-photography',
     title: 'Half Saree Photography',
     description: "Celebrate traditional ceremonies with artistic flair. We specialize in capturing the rich cultural heritage of Andhra Pradesh weddings, from the vibrant half-saree ceremony to the sacred dothi function.",
-    imageSrc: '/IMG_2014.JPG',
+    imageSrc: '/070199a0-ff7f-4947-9033-4ffaaf648c64.jpg',
   },
   {
     id: 'haldi-photography',
