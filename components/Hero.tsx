@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           className={`absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out ${
             index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           }`}
-          style={{ backgroundImage: `url(${slide.src})` }}
+          style={{ backgroundImage: `url("${slide.src}")` }}
           aria-hidden={index !== currentIndex}
         />
       ))}
