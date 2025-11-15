@@ -124,9 +124,31 @@ const AppContent: React.FC = () => {
 
   const getServiceImages = (serviceTitle: string): string[] => {
     const serviceImageMap: Record<string, string[]> = {
-      'Wedding Photography': ['/RS_P7491.jpg', '/RS_P8283.jpg', '/RS_P8309.jpg', '/RS_P8492.jpg', '/RS_P8513.jpg', '/RS_P8572.jpg', '/RS_P8610.jpg', '/RS_P82834.jpg'],
-      'Pre-Wedding Photography': ['/0I2A6395.jpg', '/0I2A6648.jpg', '/IMG_0283.JPG', '/IMG_2786.JPG', '/IMG_3588.JPG', '/IMG_3589.JPG', '/IMG_3595.JPG'],
-      'Candid Photography': ['/RS_P7491.jpg', '/RS_P8572.jpg', '/IMG_3434.JPG', '/IMG_3061.JPG', '/RS_P8309.jpg'],
+      'Wedding Photography': [
+        '/IMG_1117.JPG', '/img_1760.jpg', '/img_2597.jpg', '/img_2598.jpg', '/img_2604.jpg',
+        '/img_2620.jpg', '/img_2623.jpg', '/img_2625.jpg', '/img_2626.jpg', '/img_2953.jpg',
+        '/img_2954.jpg', '/IMG_3061.JPG', '/img_3425.jpg', '/img_3427.jpg', '/img_3428.jpg',
+        '/img_3429.jpg', '/IMG_3431.JPG', '/img_3434.jpg', '/img_3665.jpg', '/img_4389.jpg',
+        '/img_4464.jpg', '/img_5098.jpg', '/img_5901.jpg', '/img_5902.jpg', '/img_5904.jpg',
+        '/img_5905.jpg', '/img_5907.jpg', '/IMG_5908.JPG', '/img_6805.jpg', '/img_6806.jpg',
+        '/img_7149.jpg', '/img_7152.jpg', '/img_7153.jpg', '/img_7154.jpg', '/img_7155.jpg',
+        '/img_7589.jpg', '/img_7636.jpg', '/img_7639.jpg', '/img_7640.jpg', '/img_7862.jpg',
+        '/img_8016.jpg', '/img_8017.jpg', '/img_8134.jpg', '/img_8135.jpg', '/img_8136.jpg',
+        '/img_8137.jpg', '/9001a35c-4486-4854-9bf4-8e836fbb1c66.jpg'
+      ],
+      'Pre-Wedding Photography': [
+        '/0i2a6343.jpg', '/0i2a6368.jpg', '/0i2a6592.jpg', '/0i2a6596.jpg', '/0i2a6876.jpg', '/0i2a7636.jpg', '/0i2a7746 copy.jpg',
+        '/4835c39a-fb51-44c1-81dd-2ba1fc94ec64.jpg', '/66ee6e40-33e8-41bb-9c12-d9d7189f69f8.jpg', '/e23ceee0-b275-465d-a249-381120f3f88d.jpg',
+        '/img_2776.jpg', '/img_2790.jpg', '/img_2794.jpg', '/img_3048.jpg', '/img_3581.jpg', '/img_3587.jpg', '/img_3590.jpg',
+        '/img_3754.jpg', '/img_4097.jpg', '/img_7556.jpg', '/img_7557.jpg'
+      ],
+      'Candid Photography': [
+        '/0j5a9030-.jpg', '/62e61066-8be8-4ba6-924c-15af5dfe0007.jpg', '/64078515-2E5B-46A0-8596-50DD23915610.jpg',
+        '/9001a35c-4486-4854-9bf4-8e836fbb1c66.jpg', '/EEED92E7-65B9-49E0-93F1-01B243C79D7B.jpg', '/IMG_1115.JPG',
+        '/img_2604.jpg', '/img_3426.jpg', '/img_3432.jpg', '/img_3433.jpg', '/img_3435.jpg', '/img_5905.jpg',
+        '/img_5907.jpg',  '/img_6765.jpg', '/img_7862.jpg', '/IMG_9113.JPG',
+        '/img_9114.jpg',
+      ],
       'Half Saree Photography': [
         '/00b87dac-63f4-4e99-b783-0d8f5669953d.jpg',
         '/070199a0-ff7f-4947-9033-4ffaaf648c64.jpg',
@@ -154,16 +176,14 @@ const AppContent: React.FC = () => {
         '/IMG_8019.JPG'
       ],
       'Haldi Photography': [
-        '/259fd242-7274-4663-9da9-8b062a000ec9.jpg',
-        '/52ff6597-98a2-4db0-b294-f5b5d9f8ebb2.jpg',
-        '/62e61066-8be8-4ba6-924c-15af5dfe0007.jpg',
-        '/660ed3ea-6d8c-4221-995a-ee626ecd6455.jpg',
-        '/9de2bf60-56dd-4552-9ed3-34462dab9b30.jpg',
-        '/IMG_0482.JPG',
-        '/IMG_0485.JPG',
-        '/IMG_0486.JPG',
-        '/IMG_0487.JPG',
-        '/IMG_0488.JPG'
+        '/IMG_0482.JPG', '/IMG_0485.JPG', '/IMG_0486.JPG', '/IMG_0487.JPG', '/IMG_0488.JPG',
+        '/img_0489.jpg', '/img_0491.jpg', '/img_0493.jpg', '/img_1214.jpg', '/img_1215.jpg',
+        '/img_2003.jpg', '/img_2008.jpg', '/img_2009.jpg', '/IMG_2014.JPG', '/IMG_2016.JPG',
+        '/img_2017.jpg', '/img_2018.jpg', '/img_2021.jpg', '/img_2644.jpg', '/img_2647.jpg',
+        '/img_2648.jpg', '/img_2649.jpg', '/img_2947.jpg', '/img_2948.jpg', '/img_2949.jpg',
+        '/img_6583.jpg', '/img_6584.jpg', '/img_6769.jpg', '/img_6770.jpg', '/img_6808.jpg',
+        '/img_6809.jpg', '/img_7012.jpg', '/img_7013.jpg', '/b14fc2d1-02ec-4f5b-917f-7d079a7ea7f5.jpg',
+        '/c80e8b10-90f2-44e4-9487-8c920f9a1359.jpg', '/e859eba3-3a41-401b-8938-e04a859f3977.jpg'
       ],
       'Event Photography': ['/RS_P8513.jpg', '/RS_P8610.jpg', '/PHOTO-2024-05-19-19-47-16.jpg', '/IMG_9113.JPG'],
       'Celebrate Photography': [

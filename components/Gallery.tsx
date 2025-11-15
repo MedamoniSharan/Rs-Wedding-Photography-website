@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { GALLERY_PHOTOS } from '../constants';
 import type { Photo } from '../types';
 
-type Category = Photo['category'] | 'All';
+type Category = Photo['category'];
 
-const categories: Category[] = ['All', 'Wedding', 'Pre-Wedding', 'Haldi', 'Half Saree', 'Celebrate', 'Candid'];
+const categories: Category[] = ['Wedding', 'Pre-Wedding', 'Haldi', 'Half Saree', 'Celebrate', 'Candid'];
 
 // Component for individual gallery items with scroll animation
 const GalleryItem: React.FC<{ photo: Photo; onClick: () => void; }> = ({ photo, onClick }) => {
@@ -56,7 +56,7 @@ const GalleryItem: React.FC<{ photo: Photo; onClick: () => void; }> = ({ photo, 
 
 
 const Gallery: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>('All');
+  const [activeCategory, setActiveCategory] = useState<Category>('Wedding');
   const [lightboxImage, setLightboxImage] = useState<Photo | null>(null);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -119,9 +119,7 @@ const Gallery: React.FC = () => {
     setIsPanning(false);
   };
 
-  const filteredPhotos = activeCategory === 'All' 
-    ? GALLERY_PHOTOS 
-    : GALLERY_PHOTOS.filter(photo => photo.category === activeCategory);
+  const filteredPhotos = GALLERY_PHOTOS.filter(photo => photo.category === activeCategory);
 
   // Icons for zoom controls
   const ZoomInIcon: React.FC<{ className?: string }> = ({ className }) => (
