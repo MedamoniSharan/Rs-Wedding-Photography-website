@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <img 
                 src={theme === 'dark' ? "/logo-white.png" : "/white_logo_design12.png"} 
                 alt="RS Wedding Logo" 
-                className="h-12 w-auto" 
+                className="h-18 md:h-18 lg:h-25 w-auto" 
               />
             </div>
             <div className="flex space-x-4 mt-4">
@@ -117,9 +117,30 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
         </div>
         
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-center text-gray-600 dark:text-gray-500 text-sm">
-            © {new Date().getFullYear()} RS Wedding. All Rights Reserved.
-          </p>
+          <div className="text-center text-gray-600 dark:text-gray-500 text-sm space-y-1">
+            <p>© {new Date().getFullYear()} RS Wedding. All Rights Reserved.</p>
+            <p className="flex items-center justify-center gap-2">
+              <span className="sr-only">Designed by Optiwebrix</span>
+              <span className="text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Designed with</span>
+              <span className="text-golden-beige animate-pulse">♥</span>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full ring-1 ring-golden-beige/40 bg-gradient-to-r from-golden-beige/10 to-transparent hover:from-golden-beige/20 transition-all duration-300"
+                aria-label="Optiwebrix Team"
+              >
+                <img
+                  src="/optiwebrix_logo.jpg"
+                  alt="Optiwebrix logo"
+                  className="h-5 w-auto md:h-6 rounded-sm"
+                  loading="lazy"
+                />
+                <span className="font-extrabold bg-gradient-to-r from-amber-300 via-yellow-400 to-rose-300 bg-clip-text text-transparent underline underline-offset-4 decoration-golden-beige/70">
+                  Optiwebrix
+                </span>
+                <span className="text-gray-700 dark:text-gray-300 font-semibold">Team</span>
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
