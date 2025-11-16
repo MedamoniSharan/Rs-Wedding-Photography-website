@@ -14,7 +14,7 @@ const ServiceCard: React.FC<{ service: Service; className?: string }> = ({ servi
       <div className="mb-4 cursor-pointer" onClick={handleClick}>
         <img src={service.imageSrc} alt={service.title} className="w-full object-cover rounded-2xl shadow-lg aspect-[4/3] transform transition-transform duration-300 hover:scale-105" />
       </div>
-      <p className="text-gray-600 dark:text-gray-400 mb-6 text-left">{service.description}</p>
+      <p className="text-gray-600 dark:text-gray-400 mb-6 text-left leading-relaxed line-clamp-5">{service.description}</p>
       <button 
         onClick={handleClick}
         className="w-14 h-14 border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-charcoal-gray dark:hover:bg-gray-700 hover:text-white dark:hover:text-white transition-colors duration-300" 

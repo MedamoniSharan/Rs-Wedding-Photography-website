@@ -104,41 +104,49 @@ const Showcase: React.FC = () => {
                   >
                     {/* block 1 */}
                     <div className="flex flex-col gap-4">
-                      {col.map((src, j) => (
-                        <div
-                          key={`a-${i}-${j}`}
-                          className="w-full overflow-hidden rounded-lg shadow-lg"
-                          style={{
-                            aspectRatio: j % 3 === 0 ? "4 / 5" : j % 3 === 1 ? "3 / 4" : "1 / 1"
-                          }}
-                        >
-                          <img
-                            src={src}
-                            alt=""
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
+                      {col.map((src, j) => {
+                        const filename = src.split('/').pop() || 'wedding-photo';
+                        const altText = `Wedding photography showcase by Ranga Surya Photography - ${filename.replace(/\.(jpg|jpeg|JPG|png)$/i, '').replace(/[-_]/g, ' ')}`;
+                        return (
+                          <div
+                            key={`a-${i}-${j}`}
+                            className="w-full overflow-hidden rounded-lg shadow-lg"
+                            style={{
+                              aspectRatio: j % 3 === 0 ? "4 / 5" : j % 3 === 1 ? "3 / 4" : "1 / 1"
+                            }}
+                          >
+                            <img
+                              src={src}
+                              alt={altText}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                     {/* block 2 duplicate for seamless loop */}
                     <div className="mt-4 flex flex-col gap-4">
-                      {col.map((src, j) => (
-                        <div
-                          key={`b-${i}-${j}`}
-                          className="w-full overflow-hidden rounded-lg shadow-lg"
-                          style={{
-                            aspectRatio: j % 3 === 0 ? "4 / 5" : j % 3 === 1 ? "3 / 4" : "1 / 1"
-                          }}
-                        >
-                          <img
-                            src={src}
-                            alt=""
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
+                      {col.map((src, j) => {
+                        const filename = src.split('/').pop() || 'wedding-photo';
+                        const altText = `Wedding photography showcase by Ranga Surya Photography - ${filename.replace(/\.(jpg|jpeg|JPG|png)$/i, '').replace(/[-_]/g, ' ')}`;
+                        return (
+                          <div
+                            key={`b-${i}-${j}`}
+                            className="w-full overflow-hidden rounded-lg shadow-lg"
+                            style={{
+                              aspectRatio: j % 3 === 0 ? "4 / 5" : j % 3 === 1 ? "3 / 4" : "1 / 1"
+                            }}
+                          >
+                            <img
+                              src={src}
+                              alt={altText}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

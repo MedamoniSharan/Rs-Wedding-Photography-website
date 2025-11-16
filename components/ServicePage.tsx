@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeftIcon } from './icons';
 import { useTheme } from '../App';
+import SEO from './SEO';
 import type { Service } from '../types';
 
 interface ServicePageProps {
@@ -9,8 +10,75 @@ interface ServicePageProps {
   onBack: () => void;
 }
 
+// SEO metadata mapping for each service
+const getSEOMetadata = (serviceTitle: string) => {
+  const baseUrl = 'https://rangasurya.in';
+  const defaultImage = `${baseUrl}/IMG_3061.JPG`;
+  
+  const seoMap: Record<string, { title: string; description: string; keywords: string; image?: string; url: string }> = {
+    'Wedding Photography': {
+      title: 'Wedding Photography in Hyderabad | Ranga Surya Photography',
+      description: 'Professional wedding photography in Hyderabad by Ranga Surya Photography. 30+ years of experience in wedding photoshoots and candid photography.',
+      keywords: 'wedding photography hyderabad, wedding photographers hyderabad, wedding photography, candid wedding photography, wedding photoshoot hyderabad, best wedding photographers',
+      image: `${baseUrl}/img_2597.jpg`,
+      url: `${baseUrl}/#wedding-photography`
+    },
+    'Pre-Wedding Photography': {
+      title: 'Best Pre-Wedding Photoshoots in Hyderabad | Ranga Surya Photography',
+      description: 'Experience cinematic pre-wedding shoots with Ranga Surya Photography. Over 180+ pre-wedding photoshoots across India at stunning locations.',
+      keywords: 'pre-wedding photography, pre-wedding photoshoot hyderabad, pre-wedding shoot, couple photoshoot, pre-wedding photography hyderabad, best pre-wedding photographers',
+      image: `${baseUrl}/0i2a6343.jpg`,
+      url: `${baseUrl}/#pre-wedding-photography`
+    },
+    'Candid Photography': {
+      title: 'Candid Photography in Hyderabad | Natural Wedding Photoshoots',
+      description: 'Capture natural emotions with professional candid photography by Ranga Surya Photography. Perfect for weddings, events, and couple shoots.',
+      keywords: 'candid photography, candid photography hyderabad, candid wedding photography, natural photography, unposed photography, candid photoshoot',
+      image: `${baseUrl}/img_3426.jpg`,
+      url: `${baseUrl}/#candid-photography`
+    },
+    'Half Saree Photography': {
+      title: 'Half Saree Ceremony Photography | Ranga Surya Photography',
+      description: 'Capture your half saree ceremony beautifully with Ranga Surya Photography. Elegant portraits and candid photography for traditional celebrations.',
+      keywords: 'half saree photography, half saree ceremony photography, half saree photoshoot, traditional photography, half saree photography hyderabad',
+      image: `${baseUrl}/070199a0-ff7f-4947-9033-4ffaaf648c64.jpg`,
+      url: `${baseUrl}/#half-saree-photography`
+    },
+    'Haldi Photography': {
+      title: 'Haldi Photography in Hyderabad | Wedding Photoshoots',
+      description: 'Bright, joyful, and colorful Haldi photography by Ranga Surya Photography. Specialists in candid and wedding photoshoots.',
+      keywords: 'haldi photography, haldi ceremony photography, haldi photoshoot, haldi photography hyderabad, wedding haldi photography, colorful photography',
+      image: `${baseUrl}/IMG_0482.JPG`,
+      url: `${baseUrl}/#haldi-photography`
+    },
+    'Event Photography': {
+      title: 'Event Photography in Hyderabad | Ranga Surya Photography',
+      description: 'Professional event photography for birthdays, baby showers, housewarming, and corporate events across Andhra & Telangana.',
+      keywords: 'event photography, event photography hyderabad, birthday photography, baby shower photography, housewarming photography, corporate event photography, celebrity photography',
+      image: `${baseUrl}/RS_P8513.jpg`,
+      url: `${baseUrl}/#event-photography`
+    },
+    'Celebrate Photography': {
+      title: 'Celebrity Photography in Hyderabad | Ranga Surya Photography',
+      description: 'Premium celebrity photography and event coverage by Ranga Surya Photography. Professional, stylish, and cinematic portraits.',
+      keywords: 'celebrity photography, celebrity photography hyderabad, celebrity photoshoot, professional photography, high-end photography, celebrity event photography',
+      image: `${baseUrl}/RS_P8513.jpg`,
+      url: `${baseUrl}/#event-photography`
+    }
+  };
+
+  return seoMap[serviceTitle] || {
+    title: `${serviceTitle} | Ranga Surya Photography`,
+    description: `${serviceTitle} services by Ranga Surya Photography. Professional photography services in Hyderabad, Andhra Pradesh, and Telangana.`,
+    keywords: `${serviceTitle.toLowerCase()}, photography hyderabad, professional photography`,
+    image: defaultImage,
+    url: `${baseUrl}/`
+  };
+};
+
 const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) => {
   const { theme } = useTheme();
+  const seoData = getSEOMetadata(service.title);
 
   const getServiceContent = (title: string) => {
     const contentMap: Record<string, { description: string; subtitle?: string; whyChooseUs: string[]; extraContent?: string }> = {
@@ -28,7 +96,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
       },
       'Pre-Wedding Photography': {
         subtitle: 'Telling Your Love Story Before the Big Day',
-        description: "A pre-wedding photoshoot is the most beautiful way to celebrate your journey before marriage — and Ranga Surya Photography has mastered this art. With over 180+ pre-wedding shoots completed across India, our team is known for creating cinematic love stories at the most stunning locations. From the serene tea gardens of Munnar, Kerala to the romantic landscapes and heritage spots across Andhra Pradesh and Telangana, our photographers ensure every couple's story is captured with creativity, warmth, and emotion. As one of the best photographers in the region, our focus is on natural expressions, artistic framing, and picture-perfect compositions that reflect your unique chemistry. Whether you prefer a traditional vibe, a modern cinematic theme, or a destination backdrop, our team designs every shoot to bring your dream vision to life.",
+        description: "Celebrate your journey together with a magical pre-wedding photoshoot by Ranga Surya Photography. Having completed over 180+ pre-wedding shoots across India — including picturesque locations in Munnar, Kerala, and the best spots in Andhra Pradesh and Telangana — our team knows how to turn your love story into art. We blend creativity with emotion to make every pre-wedding photoshoot truly memorable. Our experienced team of wedding photographers helps you choose the best pre-wedding locations, ensuring every image reflects your chemistry and style. Whether you prefer candid moments or cinematic storytelling, we bring your dream shoot to life with elegance and perfection.",
         whyChooseUs: [
           'Experience of 180+ successful pre-wedding photoshoots across India',
           'Expertise in selecting the best pre-wedding locations that complement your story',
@@ -38,8 +106,8 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
         ]
       },
       'Haldi Photography': {
-        subtitle: 'Bright Colors, Pure Joy, and Unforgettable Moments',
-        description: "The Haldi ceremony is one of the most heartfelt and joyful parts of every Indian wedding filled with laughter, emotion, and tradition. At Ranga Surya Photography, we believe this vibrant celebration deserves to be captured with the same warmth and beauty it brings. Our team of experienced photographers specializes in Haldi photography, turning every splash of color and candid smile into a timeless memory. With over 30 years of experience in wedding photography, we bring creative storytelling, technical precision, and emotional depth to every frame. Whether it's playful Haldi moments among friends or intimate family rituals, our candid photoshoots capture the real emotions that make your day unforgettable. Each photograph reflects joy, love, and togetherness — perfectly blending tradition with artistic flair.",
+        subtitle: 'Bright Colors. Pure Joy. Beautiful Memories.',
+        description: "The Haldi ceremony is one of the happiest and most colorful wedding rituals. Our team at Ranga Surya Photography captures these vibrant moments through stunning Haldi photography, filled with laughter, love, and emotion. As experts in candid photoshoots and wedding photography, we focus on capturing spontaneous joy and the beauty of real emotions. Every splash of turmeric, every smile, and every celebration is documented with artistic precision.",
         whyChooseUs: [
           'Experts in capturing the true emotions and colors of your Haldi ceremony',
           'Recognized for delivering the best wedding photoshoots across Andhra Pradesh, Telangana, and beyond',
@@ -49,14 +117,15 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
         ]
       },
       'Event Photography': {
-        subtitle: 'Capturing Every Celebration with Perfection',
-        description: "Our team specializes in event photography that beautifully captures emotions, energy, and memories that last a lifetime. We cover all kinds of events from corporate events and family functions to baby showers, birthday celebrations, and housewarming ceremonies. No matter the occasion, our focus remains the same — to deliver high-quality, expressive images that reflect the spirit of your celebration. Our photographers blend professionalism with creativity, using modern equipment and unique angles to ensure every detail is perfectly framed. Whether it's formal corporate coverage or fun, candid moments at a family event, we make sure your story is told beautifully.",
+        subtitle: 'Every Celebration, Perfectly Captured',
+        description: "At Ranga Surya Photography, we cover all kinds of events with passion and professionalism — from corporate gatherings and birthday parties to baby showers, housewarming ceremonies, and family celebrations. With over three decades of experience, our team ensures every emotion and detail is captured perfectly. Using creative framing, lighting, and candid techniques, we deliver event albums that are filled with life and color. We are known for our candid photoshoots and wedding photoshoots that showcase real emotions and lasting memories. Ranga Surya Photography proudly offers celebrity photography services for public figures, artists, and influencers. Our photographers combine professionalism with creative direction to deliver high-end portraits and event coverage that reflect confidence and elegance. From magazine-style shoots to live event coverage, our team ensures every frame exudes perfection. With decades of expertise in wedding photography and candid shoots, we bring the same artistic touch to the world of glamour and fame.",
         whyChooseUs: [
           'Professional coverage for corporate events, conferences, and award functions',
           'Expertise in capturing housewarming ceremonies with warmth and joy',
           'Specialized baby shower event photography preserving love and anticipation',
           'Lively birthday photography for all age groups',
-          'Family & cultural events captured with care and emotion'
+          'Family & cultural events captured with care and emotion',
+          'Celebrity photography services for public figures, artists, and influencers'
         ],
         extraContent: 'Our Event Photography Services Include:\n• Corporate Events – conferences, award functions, product launches, and team gatherings\n• Housewarming Ceremonies – capturing the warmth, joy, and new beginnings\n• Baby Shower Events – preserving the love and anticipation of welcoming new life\n• Birthday photography – candid and lively coverage for all age groups\n• Family & Cultural Events – every tradition and emotion captured with care'
       }
@@ -70,8 +139,16 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
   const whyChooseUsItems = serviceContent?.whyChooseUs;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300">
-      <div className="container mx-auto px-6 py-20">
+    <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        image={seoData.image}
+        url={seoData.url}
+      />
+      <div className="min-h-screen bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300">
+        <div className="container mx-auto px-6 py-20">
         <button
           onClick={onBack}
           className="inline-flex items-center text-golden-beige hover:text-golden-beige/80 mb-8 transition-colors group"
@@ -167,6 +244,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
         )}
       </div>
     </div>
+    </>
   );
 };
 

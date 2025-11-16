@@ -56,3 +56,40 @@ export interface FAQ {
   question: string;
   answer: string;
 }
+
+export interface LocationData {
+  id: string;
+  name: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string;
+  image: string;
+  url: string;
+  h1: string;
+  intro: string[];
+  whyChooseUs: {
+    title: string;
+    points: Array<{
+      title: string;
+      description: string;
+    }>;
+  };
+  services: {
+    title: string;
+    items: string[];
+    closingNote?: string;
+  };
+  areasServed?: {
+    title: string;
+    description: string;
+    areas: string[];
+  };
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  cta: {
+    title: string;
+    subtitle?: string;
+  };
+}

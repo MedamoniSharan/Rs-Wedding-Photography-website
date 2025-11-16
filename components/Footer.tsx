@@ -106,13 +106,52 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
 
           <div>
             <h3 className="text-lg font-bold text-charcoal-gray dark:text-white mb-4">Locations</h3>
-            <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-              <p>Wedding Photographer in Hyderabad</p>
-              <p>Wedding Photographer in Vijayawada</p>
-              <p>Wedding Photographer in Vizag</p>
-              <p>Wedding Photographer in Bhimavaram</p>
-              <p>Wedding Photographer in Rajahmundry</p>
-            </div>
+            <ul className="space-y-2">
+              <li>
+                <button
+                  onClick={() => {
+                    window.location.hash = 'location-hyderabad';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
+                >
+                  Wedding Photographer in Hyderabad
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    window.location.hash = 'location-vijayawada';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
+                >
+                  Wedding Photographer in Vijayawada
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    window.location.hash = 'location-bhimavaram';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
+                >
+                  Wedding Photographer in Bhimavaram
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    window.location.hash = 'location-rajahmundry';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
+                >
+                  Wedding Photographer in Rajahmundry
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
         

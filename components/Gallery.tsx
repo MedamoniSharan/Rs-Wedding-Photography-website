@@ -46,7 +46,7 @@ const GalleryItem: React.FC<{ photo: Photo; onClick: () => void; }> = ({ photo, 
       <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover aspect-square md:aspect-[3/4] transform transition-transform duration-500 group-hover:scale-110" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="absolute bottom-0 left-0 p-4 text-white">
-          <h3 className="font-bold font-poppins">{photo.category}</h3>
+          <h3 className="font-bold font-poppins">{photo.category} Photography</h3>
           <p className="text-sm text-gray-300">{photo.location}</p>
         </div>
       </div>
