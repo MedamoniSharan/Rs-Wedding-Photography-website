@@ -421,42 +421,47 @@ export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
   { 
     id: '1', 
     url: 'https://youtu.be/PwYww2lJruc?si=e0s7mZHpHJql-LfN',
-    title: 'Wedding Photography Video 1'
+    title: 'Vennala & Karthik Wedding Trailer'
   },
   { 
     id: '2', 
     url: 'https://youtu.be/oBxBoFLXuYo?si=2ud4FCkjynX1m9Ya',
-    title: 'Wedding Photography Video 2'
+    title: 'Vennala & Karthik Wedding Video'
   },
   { 
     id: '3', 
     url: 'https://youtu.be/wnpfmgr5crM?si=xiUvs8L5inL17Ce6',
-    title: 'Wedding Photography Video 3'
+    title: 'VegiReddy Wedding Haldi Celebration'
   },
   { 
     id: '5', 
     url: 'https://youtu.be/rLfpoqMQk6I?si=Bj-oXLZRGBG7KpCV',
-    title: 'Wedding Photography Video 5'
+    title: 'Uday & Meghana Wedding Highlights'
   },
   { 
     id: '6', 
     url: 'https://youtu.be/qkMR7FAu9x8?si=v71Ipb_5VHNhuxtB',
-    title: 'Wedding Photography Video 6'
+    title: 'Pujitha & Vinay Pre-Wedding Shoot'
   },
   { 
     id: '7', 
     url: 'https://youtu.be/MQQ-KP6Ga1s?si=0gufwfRMAsNxUeTp',
-    title: 'Wedding Photography Video 7'
+    title: 'Krishna & Kreethi Pre-Wedding Song'
   },
   { 
     id: '8', 
     url: 'https://youtu.be/HjK_4YKyOzY?si=Rg5k8klfxBop1YbB',
-    title: 'Wedding Photography Video 8'
+    title: 'Sri & Ravali Pre-Wedding Shoot'
   },
   { 
     id: '9', 
     url: 'https://youtu.be/h_Z6smgUfBo?si=l2IrI9wFCiZ-cHYI',
-    title: 'Wedding Photography Video 9'
+    title: 'Surya Reddy & Poojitha Pre-Wedding Song'
+  },
+  { 
+    id: '10', 
+    url: 'https://youtu.be/-FJ0EmRwcPU?si=9OZ31NIO_0SgLhsE',
+    title: 'Lasya Sree - Half Saree Function Cinematic Photography'
   },
 ];
 

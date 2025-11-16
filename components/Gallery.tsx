@@ -46,7 +46,7 @@ const GalleryItem: React.FC<{ photo: Photo; onClick: () => void; }> = ({ photo, 
       <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover aspect-square md:aspect-[3/4] transform transition-transform duration-500 group-hover:scale-110" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div className="absolute bottom-0 left-0 p-4 text-white">
-          <h3 className="font-bold font-poppins">{photo.shootType}</h3>
+          <h3 className="font-bold font-poppins">{photo.category}</h3>
           <p className="text-sm text-gray-300">{photo.location}</p>
         </div>
       </div>
@@ -164,6 +164,32 @@ const Gallery: React.FC = () => {
           {filteredPhotos.map(photo => (
             <GalleryItem key={photo.id} photo={photo} onClick={() => handleOpenLightbox(photo)} />
           ))}
+        </div>
+
+        {/* Call To Action */}
+        <div className="mt-16 md:mt-20 text-center">
+          <h3 className="text-2xl md:text-3xl font-poppins font-extrabold text-charcoal-gray dark:text-white">
+            Loved the Gallery? Let’s Capture Your Story.
+          </h3>
+          <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Secure your date with RS Wedding Photography. We shoot across Andhra Pradesh, Telangana and pan-India.
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-3 md:gap-4">
+            <a
+              href="https://wa.me/917036929247"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 md:px-8 py-3 rounded-full bg-golden-beige text-charcoal-gray font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all duration-300 shadow-md shadow-golden-beige/20"
+            >
+              Book on WhatsApp
+            </a>
+            <a
+              href="#contact"
+              className="px-6 md:px-8 py-3 rounded-full border-2 border-golden-beige text-golden-beige font-bold uppercase tracking-wider hover:bg-golden-beige hover:text-charcoal-gray transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
 

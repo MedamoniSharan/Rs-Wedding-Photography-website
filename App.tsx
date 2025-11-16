@@ -134,7 +134,7 @@ const AppContent: React.FC = () => {
         '/img_7149.jpg', '/img_7152.jpg', '/img_7153.jpg', '/img_7154.jpg', '/img_7155.jpg',
         '/img_7589.jpg', '/img_7636.jpg', '/img_7639.jpg', '/img_7640.jpg', '/img_7862.jpg',
         '/img_8016.jpg', '/img_8017.jpg', '/img_8134.jpg', '/img_8135.jpg', '/img_8136.jpg',
-        '/img_8137.jpg', '/9001a35c-4486-4854-9bf4-8e836fbb1c66.jpg'
+        '/img_8137.jpg', '/9001a35c-4486-4854-9bf4-8e836fbb1c66.jpg', '/img_4464.jpg'
       ],
       'Pre-Wedding Photography': [
         '/0i2a6343.jpg', '/0i2a6368.jpg', '/0i2a6592.jpg', '/0i2a6596.jpg', '/0i2a6876.jpg', '/0i2a7636.jpg', '/0i2a7746 copy.jpg',
