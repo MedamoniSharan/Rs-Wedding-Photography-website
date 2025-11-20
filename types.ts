@@ -8,7 +8,7 @@ export interface Photo {
   id: number;
   src: string;
   alt: string;
-  category: 'Wedding' | 'Pre-Wedding' | 'Haldi' | 'Half Saree' | 'Celebrate' | 'Candid';
+  category: 'Wedding' | 'Pre-Wedding' | 'Haldi' | 'Half Saree' | 'Celebrate' | 'Candid' | 'Mehendi';
   location: string;
   shootType: string;
 }

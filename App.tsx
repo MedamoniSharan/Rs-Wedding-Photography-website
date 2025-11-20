@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
@@ -38,9 +39,8 @@ export const useTheme = () => {
 
 const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('home');
-  const [currentService, setCurrentService] = useState<Service | null>(null);
-  const [currentLocation, setCurrentLocation] = useState<LocationData | null>(null);
-  const [showAboutPage, setShowAboutPage] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   
   const sectionsRef = {
     home: useRef<HTMLDivElement>(null),
@@ -51,51 +51,9 @@ const AppContent: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash) {
-        if (hash === 'about') {
-          setShowAboutPage(true);
-          setCurrentService(null);
-          setCurrentLocation(null);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else if (hash.startsWith('location-')) {
-          const locationId = hash.replace('location-', '');
-          const location = LOCATIONS_DATA.find(l => l.id === locationId);
-          if (location) {
-            setCurrentLocation(location);
-            setCurrentService(null);
-            setShowAboutPage(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            setCurrentLocation(null);
-            setCurrentService(null);
-            setShowAboutPage(false);
-          }
-        } else {
-          const service = SERVICES_DATA.find(s => s.id === hash);
-          if (service) {
-            setCurrentService(service);
-            setCurrentLocation(null);
-            setShowAboutPage(false);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          } else {
-            setCurrentService(null);
-            setCurrentLocation(null);
-            setShowAboutPage(false);
-          }
-        }
-      } else {
-        setCurrentService(null);
-        setCurrentLocation(null);
-        setShowAboutPage(false);
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+    // Scroll to top when route changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
   useEffect(() => {
     const observerOptions = {
@@ -182,19 +140,104 @@ const AppContent: React.FC = () => {
   };
 
   const handleBackToServices = () => {
-    window.location.hash = '';
-    setCurrentService(null);
+    navigate('/');
     setTimeout(() => {
       scrollToSection('services');
     }, 100);
   };
 
   const handleBackToHome = () => {
-    window.location.hash = '';
-    setShowAboutPage(false);
-    setCurrentLocation(null);
+    navigate('/');
     setTimeout(() => {
       scrollToSection('home');
+    }, 100);
+  };
+
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <SEO 
+              title="Wedding Photography in Hyderabad | Ranga Surya Photography"
+              description="Professional wedding photography in Hyderabad by Ranga Surya Photography. 30+ years of experience in wedding photoshoots and candid photography."
+              keywords="wedding photography hyderabad, wedding photographers hyderabad, pre-wedding photography, haldi photography, half saree photography, candid photography, event photography, wedding cinematography, best wedding photographers andhra pradesh, wedding photographers telangana, ranga surya photography"
+              image="https://rangasurya.in/IMG_3061.JPG"
+              url="https://rangasurya.in/"
+            />
+            <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+              <Header activeSection={activeSection} scrollToSection={scrollToSection} />
+              <main>
+                <div id="home" ref={sectionsRef.home}><Hero scrollToSection={scrollToSection} /></div>
+                <div id="gallery" ref={sectionsRef.gallery}><Gallery /></div>
+                <Showcase />
+                <div id="services" ref={sectionsRef.services}><Services /></div>
+                <PortfolioCarousel />
+                <div id="videos" ref={sectionsRef.videos}><YouTubeVideos videos={YOUTUBE_VIDEOS} /></div>
+                <Testimonials testimonials={CLIENT_REVIEWS} />
+                <FAQ faqs={FAQ_DATA} />
+                <div id="contact" ref={sectionsRef.contact}><Contact /></div>
+              </main>
+              <Footer scrollToSection={scrollToSection} />
+              <FloatingWhatsApp />
+            </div>
+          </>
+        } />
+        <Route path="/about" element={
+          <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+            <Header activeSection="about" scrollToSection={scrollToSection} />
+            <AboutPage 
+              onBack={handleBackToHome}
+              scrollToSection={scrollToSection}
+            />
+            <Footer scrollToSection={scrollToSection} />
+            <FloatingWhatsApp />
+          </div>
+        } />
+        <Route path="/:id" element={<DynamicRoute />} />
+      </Routes>
+    </>
+  );
+};
+
+const DynamicRoute: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const id = location.pathname.slice(1); // Remove leading '/'
+  
+  // Check if it's a service
+  const service = SERVICES_DATA.find(s => s.id === id);
+  if (service) {
+    return <ServiceContent service={service} navigate={navigate} />;
+  }
+  
+  // Check if it's a location
+  const locationData = LOCATIONS_DATA.find(l => l.id === id);
+  if (locationData) {
+    return <LocationContent location={locationData} navigate={navigate} />;
+  }
+  
+  // If neither matches, redirect to home
+  navigate('/');
+  return null;
+};
+
+const ServiceContent: React.FC<{ service: Service; navigate: ReturnType<typeof useNavigate> }> = ({ service, navigate }) => {
+
+  const scrollToSection = (section: Section) => {
+    // This is for navigation within the home page
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleBackToServices = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById('services');
+      element?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
 
@@ -291,80 +334,60 @@ const AppContent: React.FC = () => {
         '/IMG_9880.JPG',
         '/IMG_9881.JPG',
         '/IMG_9882.JPG'
+      ],
+      'Mehendi Photography': [
+        '/mehendi/elegant-indian-bride-adorning-herself-with-jewelry.jpg',
+        '/mehendi/indian-bride-portrait.jpg',
+        '/mehendi/indian-wedding-bangles-mehandi-henna-coloured-hands-with-reflective-ornament.jpg',
+        '/mehendi/indian-woman-showing-her-painted-hands-with-henna-decoration.jpg',
+        '/mehendi/mehndi-wedding-ornament-hands-drawn-by-henna.jpg'
       ]
     };
     return serviceImageMap[serviceTitle] || [];
   };
 
-  if (currentLocation) {
-    return (
-      <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
-        <Header activeSection="home" scrollToSection={scrollToSection} />
-        <LocationPage 
-          location={currentLocation} 
-          onBack={handleBackToHome}
-        />
-        <Footer scrollToSection={scrollToSection} />
-        <FloatingWhatsApp />
-      </div>
-    );
-  }
+  return (
+    <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+      <Header activeSection="services" scrollToSection={scrollToSection} />
+      <ServicePage 
+        service={service} 
+        images={getServiceImages(service.title)}
+        onBack={handleBackToServices}
+      />
+      <Footer scrollToSection={scrollToSection} />
+      <FloatingWhatsApp />
+    </div>
+  );
+};
 
-  if (currentService) {
-    return (
-      <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
-        <Header activeSection="services" scrollToSection={scrollToSection} />
-        <ServicePage 
-          service={currentService} 
-          images={getServiceImages(currentService.title)}
-          onBack={handleBackToServices}
-        />
-        <Footer scrollToSection={scrollToSection} />
-        <FloatingWhatsApp />
-      </div>
-    );
-  }
+const LocationContent: React.FC<{ location: LocationData; navigate: ReturnType<typeof useNavigate> }> = ({ location: locationData, navigate }) => {
 
-  if (showAboutPage) {
-    return (
-      <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
-        <Header activeSection="about" scrollToSection={scrollToSection} />
-        <AboutPage 
-          onBack={handleBackToHome}
-          scrollToSection={scrollToSection}
-        />
-        <Footer scrollToSection={scrollToSection} />
-        <FloatingWhatsApp />
-      </div>
-    );
-  }
+  const scrollToSection = (section: Section) => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleBackToHome = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById('home');
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   return (
-    <>
-      <SEO 
-        title="Wedding Photography in Hyderabad | Ranga Surya Photography"
-        description="Professional wedding photography in Hyderabad by Ranga Surya Photography. 30+ years of experience in wedding photoshoots and candid photography."
-        keywords="wedding photography hyderabad, wedding photographers hyderabad, pre-wedding photography, haldi photography, half saree photography, candid photography, event photography, wedding cinematography, best wedding photographers andhra pradesh, wedding photographers telangana, ranga surya photography"
-        image="https://rangasurya.in/IMG_3061.JPG"
-        url="https://rangasurya.in/"
+    <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+      <Header activeSection="home" scrollToSection={scrollToSection} />
+      <LocationPage 
+        location={locationData} 
+        onBack={handleBackToHome}
       />
-      <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
-        <Header activeSection={activeSection} scrollToSection={scrollToSection} />
-        <main>
-          <div id="home" ref={sectionsRef.home}><Hero scrollToSection={scrollToSection} /></div>
-          <div id="gallery" ref={sectionsRef.gallery}><Gallery /></div>
-          <Showcase />
-          <div id="services" ref={sectionsRef.services}><Services /></div>
-          <PortfolioCarousel />
-          <div id="videos" ref={sectionsRef.videos}><YouTubeVideos videos={YOUTUBE_VIDEOS} /></div>
-          <Testimonials testimonials={CLIENT_REVIEWS} />
-          <FAQ faqs={FAQ_DATA} />
-          <div id="contact" ref={sectionsRef.contact}><Contact /></div>
-        </main>
-        <Footer scrollToSection={scrollToSection} />
-        <FloatingWhatsApp />
-      </div>
-    </>
+      <Footer scrollToSection={scrollToSection} />
+      <FloatingWhatsApp />
+    </div>
   );
 };
 

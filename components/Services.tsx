@@ -1,11 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SERVICES_DATA } from '../constants';
 import type { Service } from '../types';
 import { ArrowUpRightIcon } from './icons';
 
 const ServiceCard: React.FC<{ service: Service; className?: string }> = ({ service, className }) => {
+  const navigate = useNavigate();
+  
   const handleClick = () => {
-    window.location.hash = service.id || '';
+    if (service.id) {
+      navigate(`/${service.id}`);
+    }
   };
 
   return (

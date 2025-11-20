@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeftIcon } from './icons';
 import SEO from './SEO';
+import { BRANCHES_DATA } from '../constants';
 import type { LocationData } from '../types';
 
 interface LocationPageProps {
@@ -9,6 +10,23 @@ interface LocationPageProps {
 }
 
 const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
+  // Find matching branch data based on location ID
+  const branch = BRANCHES_DATA.find(b => {
+    const branchName = b.name.toLowerCase();
+    const locationName = location.name.toLowerCase();
+    const locationId = location.id.toLowerCase();
+    
+    // Match by location ID or name
+    if (locationId === 'hyderabad' && branchName.includes('hyderabad')) return true;
+    if (locationId === 'vijayawada' && branchName.includes('vijayawada')) return true;
+    if (locationId === 'bhimavaram' && branchName.includes('bhimavaram')) return true;
+    if (locationId === 'rajahmundry' && branchName.includes('rajahmundry')) return true;
+    if (locationId === 'vizag' && branchName.includes('vizag')) return true;
+    
+    // Fallback to name matching
+    return branchName.includes(locationName) || locationName.includes(branchName.split(' ')[0]);
+  });
+
   return (
     <>
       <SEO 
@@ -127,28 +145,92 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
           )}
 
           {/* Call to Action */}
-          <section className="bg-gradient-to-r from-golden-beige/10 to-transparent border border-golden-beige/20 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-poppins font-bold text-charcoal-gray dark:text-white mb-4">
-              {location.cta.title}
-            </h2>
-            {location.cta.subtitle && (
-              <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
-                {location.cta.subtitle}
-              </p>
+          <section className="space-y-8">
+            {/* Location Box */}
+            {branch && (
+              <div className="bg-gray-800 dark:bg-gray-900 rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 className="text-2xl md:text-3xl font-poppins font-bold text-white mb-3">
+                  {branch.name}
+                </h2>
+                <p className="text-golden-beige mb-6 text-sm md:text-base">
+                  {branch.specialty}
+                </p>
+                
+                <div className="space-y-4">
+                  {/* Address */}
+                  <div className="flex items-start">
+                    <svg className="w-5 h-5 text-golden-beige mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    <div className="flex-1">
+                      <p className="text-white text-sm md:text-base">{branch.address}</p>
+                      {branch.mapLink && (
+                        <a
+                          href={branch.mapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-golden-beige hover:text-golden-beige/80 text-sm mt-1 inline-block transition-colors"
+                        >
+                          View on Map
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-golden-beige mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <a
+                      href={`tel:${branch.phone.replace(/\s/g, '')}`}
+                      className="text-white hover:text-golden-beige text-sm md:text-base transition-colors"
+                    >
+                      {branch.phone}
+                    </a>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-golden-beige mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <a
+                      href={`mailto:${branch.email}`}
+                      className="text-white hover:text-golden-beige text-sm md:text-base transition-colors"
+                    >
+                      {branch.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
             )}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.open('https://wa.me/917036929247', '_blank')}
-                className="bg-golden-beige text-charcoal-gray px-8 py-4 font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 rounded-md"
-              >
-                Book Now
-              </button>
-              <button 
-                onClick={() => window.open('tel:+917036929247')}
-                className="border-2 border-golden-beige text-golden-beige px-8 py-4 font-bold uppercase tracking-widest hover:bg-golden-beige hover:text-charcoal-gray transition-all duration-300 transform hover:scale-105 rounded-md"
-              >
-                Call Us
-              </button>
+
+            {/* CTA Section */}
+            <div className="bg-gradient-to-r from-golden-beige/10 to-transparent border border-golden-beige/20 rounded-2xl p-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-poppins font-bold text-charcoal-gray dark:text-white mb-4">
+                {location.cta.title}
+              </h2>
+              {location.cta.subtitle && (
+                <p className="text-gray-600 dark:text-gray-300 mb-6 italic">
+                  {location.cta.subtitle}
+                </p>
+              )}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => window.open('https://wa.me/917036929247', '_blank')}
+                  className="bg-golden-beige text-charcoal-gray px-8 py-4 font-bold uppercase tracking-widest hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 rounded-md"
+                >
+                  Book Now
+                </button>
+                <button 
+                  onClick={() => window.open('tel:+917036929247')}
+                  className="border-2 border-golden-beige text-golden-beige px-8 py-4 font-bold uppercase tracking-widest hover:bg-golden-beige hover:text-charcoal-gray transition-all duration-300 transform hover:scale-105 rounded-md"
+                >
+                  Call Us
+                </button>
+              </div>
             </div>
           </section>
         </div>

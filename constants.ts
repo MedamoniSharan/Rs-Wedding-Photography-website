@@ -208,6 +208,13 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 118, src: '/img_7862.jpg', alt: 'Candid wedding photography', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
   { id: 120, src: '/IMG_9113.JPG', alt: 'Candid wedding photography', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
   { id: 121, src: '/img_9114.jpg', alt: 'Candid photography', category: 'Candid', location: 'Hyderabad', shootType: 'Candid' },
+  
+  // Mehendi Photos
+  { id: 150, src: '/mehendi/elegant-indian-bride-adorning-herself-with-jewelry.jpg', alt: 'Mehendi ceremony - elegant bride', category: 'Mehendi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 151, src: '/mehendi/indian-bride-portrait.jpg', alt: 'Mehendi photography - bride portrait', category: 'Mehendi', location: 'Hyderabad', shootType: 'Portrait' },
+  { id: 152, src: '/mehendi/indian-wedding-bangles-mehandi-henna-coloured-hands-with-reflective-ornament.jpg', alt: 'Mehendi henna designs on hands', category: 'Mehendi', location: 'Hyderabad', shootType: 'Details' },
+  { id: 153, src: '/mehendi/indian-woman-showing-her-painted-hands-with-henna-decoration.jpg', alt: 'Beautiful mehendi henna patterns', category: 'Mehendi', location: 'Hyderabad', shootType: 'Details' },
+  { id: 154, src: '/mehendi/mehndi-wedding-ornament-hands-drawn-by-henna.jpg', alt: 'Mehendi ceremony highlights', category: 'Mehendi', location: 'Hyderabad', shootType: 'Ceremony' },
 ];
 
 export const SHOWCASE_IMAGES: string[] = [
@@ -369,6 +376,12 @@ export const SERVICES_DATA: Service[] = [
     description: "Capture the joy and vibrancy of your celebrations with our creative photography. We specialize in documenting festive moments, parties, and special occasions with artistic vision and attention to detail. Every celebration deserves to be remembered beautifully.",
     imageSrc: '/02377817-F29F-4B1B-B0E6-DFEC4D44DF9B.jpg',
   },
+  {
+    id: 'mehendi-photography',
+    title: 'Mehendi Photography',
+    description: "The Mehendi ceremony is a beautiful pre-wedding ritual filled with intricate designs, vibrant colors, and joyful celebrations. At Ranga Surya Photography, we specialize in capturing the artistry of henna designs, the emotions of the ceremony, and the candid moments of laughter and bonding. Our Mehendi photography beautifully documents this traditional celebration with a perfect blend of artistic portraits and candid shots.",
+    imageSrc: '/mehendi/elegant-indian-bride-adorning-herself-with-jewelry.jpg',
+  },
 ];
 
 
@@ -392,16 +405,22 @@ export const TEAM_DATA: TeamMember[] = [
     imageSrc: '/Mr_manikanta.png' 
   },
   { 
-    name: 'Ajay Kumar', 
-    role: 'Cinematographer & Teaser Maker', 
-    description: 'Ajay Kumar is a creative cinematographer and teaser maker known for his dynamic visuals and modern storytelling style.',
-    imageSrc: '/Ajay_kumar.png' 
+    name: 'Prem Kumar', 
+    role: 'Traditional Photographer', 
+    description: 'Prem Kumar is a skilled traditional photographer specializing in capturing classic wedding moments with timeless elegance and attention to detail.',
+    imageSrc: '/traditional_photographer.jpg' 
   },
   { 
     name: 'K. Mahesh', 
     role: 'Cinematographer', 
     description: 'K. Mahesh is a talented cinematographer known for his creative visuals and storytelling through the lens.',
     imageSrc: '/mahesh.png' 
+  },
+  { 
+    name: 'Ajay Kumar', 
+    role: 'Cinematographer & Teaser Maker', 
+    description: 'Ajay Kumar is a creative cinematographer and teaser maker known for his dynamic visuals and modern storytelling style.',
+    imageSrc: '/Ajay_kumar.png' 
   },
   { 
     name: 'Deepak Kumar', 
@@ -486,7 +505,7 @@ export const BRANCHES_DATA: Branch[] = [
     name: 'Vizag Branch',
     specialty: 'Wedding Photography & Cinematography',
     address: '50-49-43/C, TPT Colony, Balayya Sastri Layout, Seethammadara, Visakhapatnam, Andhra Pradesh 530013',
-    phone: '+91 94403 28796',
+    phone: '+91 91336 64556',
     email: 'vizag@rangasurya.in',
     mapLink: 'https://maps.app.goo.gl/QWWACUf3WEMXoPEM7?g_st=ipc'
   },
@@ -494,7 +513,7 @@ export const BRANCHES_DATA: Branch[] = [
     name: 'Rajahmundry Branch',
     specialty: 'Best Wedding Photographers | Pre-wedding shoots',
     address: 'D.no : 9, 10-5, Subhash chandra bose street, opp. chandra bhanu line, Navabharat Nagar, Rajamahendravaram, Andhra Pradesh 533101',
-    phone: '+91 99593 93593',
+    phone: '+91 91336 64556',
     email: 'rajahmundry@rangasurya.in',
     mapLink: 'https://maps.app.goo.gl/i6rjcQ34Hj8sKWUV8?g_st=ipc'
   },

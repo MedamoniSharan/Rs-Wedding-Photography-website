@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InstagramIcon, FacebookIcon, YouTubeIcon, WhatsAppIcon } from './icons';
 import type { Section } from '../types';
 import { useTheme } from '../App';
@@ -10,9 +11,10 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   const handleServiceClick = (serviceId: string) => {
-    window.location.hash = serviceId;
+    navigate(`/${serviceId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
@@ -85,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    window.location.hash = 'about';
+                    navigate('/about');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -110,7 +112,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    window.location.hash = 'location-hyderabad';
+                    navigate('/hyderabad');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -121,7 +123,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    window.location.hash = 'location-vijayawada';
+                    navigate('/vijayawada');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -132,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    window.location.hash = 'location-bhimavaram';
+                    navigate('/bhimavaram');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -143,7 +145,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    window.location.hash = 'location-rajahmundry';
+                    navigate('/rajahmundry');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"

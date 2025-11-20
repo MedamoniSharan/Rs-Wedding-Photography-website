@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { Section } from '../types';
 import { useTheme } from '../App';
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from './icons';
@@ -34,22 +35,28 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
 
   const handleLinkClick = (section: Section) => {
     if (section === 'about') {
-      window.location.hash = 'about';
+      navigate('/about');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (section !== 'services') {
-      window.location.hash = '';
-      scrollToSection(section);
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(section);
+      }, 100);
     } else {
-      scrollToSection(section);
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(section);
+      }, 100);
     }
     setIsMobileMenuOpen(false);
   };
 
   const handleServiceClick = (serviceId: string) => {
-    window.location.hash = serviceId;
+    navigate(`/${serviceId}`);
     setIsMobileMenuOpen(false);
     setIsServicesDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -59,8 +66,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
     { section: 'home', label: 'Home' },
     { section: 'gallery', label: 'Gallery' },
     { section: 'services', label: 'Services' },
-    { section: 'about', label: 'About' },
-    { section: 'videos', label: 'Videos' },
+    { section: 'about', label: 'About Us' },
+    { section: 'videos', label: 'Cinematography' },
     { section: 'contact', label: 'Contact' },
   ];
 
@@ -69,7 +76,12 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
       <div className="px-4 py-2 flex justify-between items-center">
         <div 
           className="flex items-center cursor-pointer"
-          onClick={() => handleLinkClick('home')}
+          onClick={() => {
+            navigate('/');
+            setTimeout(() => {
+              scrollToSection('home');
+            }, 100);
+          }}
         >
           <img 
             src={theme === 'dark' ? "/logo-white.png" : "/white_logo_design12.png"} 
@@ -84,7 +96,12 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
               return (
                 <div key={link.section} className="relative group">
                   <button
-                    onClick={() => scrollToSection('services')}
+                    onClick={() => {
+                      navigate('/');
+                      setTimeout(() => {
+                        scrollToSection('services');
+                      }, 100);
+                    }}
                     className={`px-4 py-2 text-sm font-medium transition-colors duration-300 relative uppercase tracking-widest ${
                       activeSection === 'services' ? 'text-golden-beige' : 'text-gray-700 dark:text-gray-300 hover:text-golden-beige'
                     }`}
@@ -143,7 +160,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
                   <div key={link.section} className="w-full">
                     <button
                       onClick={() => {
-                        scrollToSection('services');
+                        navigate('/');
+                        setTimeout(() => {
+                          scrollToSection('services');
+                        }, 100);
                         setIsServicesDropdownOpen(!isServicesDropdownOpen);
                       }}
                       className={`py-3 w-full text-center text-lg uppercase tracking-widest transition-colors duration-200 rounded-md flex items-center justify-center gap-2 ${
