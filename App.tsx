@@ -304,7 +304,17 @@ const ServiceContent: React.FC<{ service: Service; navigate: ReturnType<typeof u
         '/img_6809.jpg', '/img_7012.jpg', '/img_7013.jpg', '/b14fc2d1-02ec-4f5b-917f-7d079a7ea7f5.jpg',
         '/c80e8b10-90f2-44e4-9487-8c920f9a1359.jpg', '/e859eba3-3a41-401b-8938-e04a859f3977.jpg'
       ],
-      'Event Photography': ['/RS_P8513.jpg', '/RS_P8610.jpg', '/PHOTO-2024-05-19-19-47-16.jpg', '/IMG_9113.JPG'],
+      'Event Photography': [
+        '/events/WhatsApp Image 2025-11-21 at 19.53.04 (1).jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.04 (2).jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.04.jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.05 (1).jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.05 (2).jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.05.jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.06.jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.07 (1).jpeg',
+        '/events/WhatsApp Image 2025-11-21 at 19.53.07 (2).jpeg'
+      ],
       'Celebrate Photography': [
         '/02377817-F29F-4B1B-B0E6-DFEC4D44DF9B.jpg',
         '/0BEB5C88-A889-49C8-8C1F-7BD9F9562682.jpg',

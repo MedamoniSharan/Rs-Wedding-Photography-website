@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const MAX_SIZE = 1024 * 1024; // 1MB in bytes
+const MAX_SIZE = 2 * 1024 * 1024; // 2MB in bytes
 const PUBLIC_DIR = path.join(__dirname, '../public');
 const MEHENDHI_DIR = path.join(__dirname, '../mehandhi');
 
@@ -155,7 +155,7 @@ async function processDirectory(dirPath, relativePath = '') {
             }
           } else {
             skipped++;
-            console.log(`⊘ Skipped (already < 1MB): ${file} (${(fileSize / 1024 / 1024).toFixed(2)}MB)`);
+            console.log(`⊘ Skipped (already < 2MB): ${file} (${(fileSize / 1024 / 1024).toFixed(2)}MB)`);
           }
         }
       }
@@ -203,7 +203,7 @@ async function main() {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
   console.log('📊 Compression Summary:');
   console.log(`   ✓ Processed: ${totalProcessed} images`);
-  console.log(`   ⊘ Skipped: ${totalSkipped} images (already < 1MB)`);
+  console.log(`   ⊘ Skipped: ${totalSkipped} images (already < 2MB)`);
   console.log(`   ✗ Errors: ${totalErrors} images`);
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
   

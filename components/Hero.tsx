@@ -37,8 +37,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       
       <div className="relative z-10 text-center text-white px-4 mt-48">
         <div className="overflow-hidden mb-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-poppins font-black tracking-tight animate-text-reveal opacity-80" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
-                One Life. One Shot.
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-poppins font-black tracking-tight animate-text-reveal opacity-80" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            Captured With Unmatched Elegance
             </h1>
         </div>
         <div className="overflow-hidden mb-8">

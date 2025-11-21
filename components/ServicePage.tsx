@@ -55,7 +55,7 @@ const getSEOMetadata = (serviceTitle: string) => {
       title: 'Event Photography in Hyderabad | Ranga Surya Photography',
       description: 'Professional event photography for birthdays, baby showers, housewarming, and corporate events across Andhra & Telangana.',
       keywords: 'event photography, event photography hyderabad, birthday photography, baby shower photography, housewarming photography, corporate event photography, celebrity photography',
-      image: `${baseUrl}/RS_P8513.jpg`,
+      image: `${baseUrl}/events/WhatsApp Image 2025-11-21 at 19.53.04.jpeg`,
       url: `${baseUrl}/#event-photography`
     },
     'Celebrate Photography': {

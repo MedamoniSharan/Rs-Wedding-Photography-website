@@ -1,32 +1,3 @@
-# robots.txt for Ranga Surya Photography
-# https://rangasurya.in
-
 User-agent: *
-Allow: /
-
-# Disallow admin or private areas if any
 Disallow: /admin/
-Disallow: /private/
-
-# Allow all important pages
-Allow: /
-Allow: /about
-Allow: /wedding-photography
-Allow: /pre-wedding-photography
-Allow: /candid-photography
-Allow: /half-saree-photography
-Allow: /haldi-photography
-Allow: /event-photography
-Allow: /celebrate-photography
-Allow: /mehendi-photography
-Allow: /hyderabad
-Allow: /vijayawada
-Allow: /bhimavaram
-Allow: /rajahmundry
-
-# Sitemap location
-Sitemap: https://rangasurya.in/sitemap.xml
-
-# Crawl-delay (optional, adjust if needed)
-Crawl-delay: 1
-
+Sitemap: https://rangasuryaphotography.com/sitemap.xml

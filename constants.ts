@@ -368,7 +368,7 @@ export const SERVICES_DATA: Service[] = [
     id: 'event-photography',
     title: 'Event Photography',
     description: "At Ranga Surya Photography, we cover all kinds of events with passion and professionalism — from corporate gatherings and birthday parties to baby showers, housewarming ceremonies, and family celebrations. With over three decades of experience, our team ensures every emotion and detail is captured perfectly. We also offer celebrity photography services for public figures, artists, and influencers with high-end portraits and event coverage.",
-    imageSrc: '/RS_P8513.jpg',
+    imageSrc: '/events/WhatsApp Image 2025-11-21 at 19.53.04.jpeg',
   },
   {
     id: 'celebrate-photography',
@@ -433,6 +433,12 @@ export const TEAM_DATA: TeamMember[] = [
     role: 'Album Designer & Photographer', 
     description: 'Baji is a talented album designer and photographer known for his creative layouts and eye for visual storytelling.',
     imageSrc: '/baji.png' 
+  },
+  { 
+    name: 'Jay Raju', 
+    role: 'Traditional & Album Designer', 
+    description: 'Jay Raju is a skilled traditional photographer and album designer, combining classic photography techniques with modern album design to create timeless wedding memories.',
+    imageSrc: '/Jay_raju.jpg' 
   },
 ];
 

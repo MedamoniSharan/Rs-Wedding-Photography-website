@@ -16,12 +16,12 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
     const locationName = location.name.toLowerCase();
     const locationId = location.id.toLowerCase();
     
-    // Match by location ID or name
-    if (locationId === 'hyderabad' && branchName.includes('hyderabad')) return true;
-    if (locationId === 'vijayawada' && branchName.includes('vijayawada')) return true;
-    if (locationId === 'bhimavaram' && branchName.includes('bhimavaram')) return true;
-    if (locationId === 'rajahmundry' && branchName.includes('rajahmundry')) return true;
-    if (locationId === 'vizag' && branchName.includes('vizag')) return true;
+    // Match by location ID (handles new format: wedding-photography-in-hyderabad)
+    if (locationId.includes('hyderabad') && branchName.includes('hyderabad')) return true;
+    if (locationId.includes('vijayawada') && branchName.includes('vijayawada')) return true;
+    if (locationId.includes('bhimavaram') && branchName.includes('bhimavaram')) return true;
+    if (locationId.includes('rajahmundry') && branchName.includes('rajahmundry')) return true;
+    if (locationId.includes('vizag') && branchName.includes('vizag')) return true;
     
     // Fallback to name matching
     return branchName.includes(locationName) || locationName.includes(branchName.split(' ')[0]);

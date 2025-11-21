@@ -112,7 +112,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/hyderabad');
+                    navigate('/wedding-photography-in-hyderabad');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -123,7 +123,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/vijayawada');
+                    navigate('/wedding-photography-in-vijayawada');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -134,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/bhimavaram');
+                    navigate('/wedding-photography-in-bhimavaram');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -145,7 +145,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/rajahmundry');
+                    navigate('/wedding-photography-in-rajahmundry');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
