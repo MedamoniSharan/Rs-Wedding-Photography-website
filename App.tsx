@@ -10,6 +10,7 @@ import LocationPage from './components/LocationPage';
 import PortfolioCarousel from './components/PortfolioCarousel';
 import AboutPage from './components/AboutPage';
 import YouTubeVideos from './components/YouTubeVideos';
+import WeddingCinematographyPage from './components/WeddingCinematographyPage';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
@@ -190,6 +191,14 @@ const AppContent: React.FC = () => {
               onBack={handleBackToHome}
               scrollToSection={scrollToSection}
             />
+            <Footer scrollToSection={scrollToSection} />
+            <FloatingWhatsApp />
+          </div>
+        } />
+        <Route path="/wedding-cinematography" element={
+          <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+            <Header activeSection="videos" scrollToSection={scrollToSection} />
+            <WeddingCinematographyPage />
             <Footer scrollToSection={scrollToSection} />
             <FloatingWhatsApp />
           </div>

@@ -54,7 +54,7 @@ const YouTubeVideos: React.FC<YouTubeVideosProps> = ({ videos }) => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-poppins font-black text-charcoal-gray dark:text-white mb-4">
-              Our Cinematography
+              Our Wedding Cinematography
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Watch our latest wedding photography and cinematography work

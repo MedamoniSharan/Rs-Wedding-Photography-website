@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from './icons';
 import SEO from './SEO';
 import { BRANCHES_DATA } from '../constants';
@@ -10,6 +11,7 @@ interface LocationPageProps {
 }
 
 const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
+  const navigate = useNavigate();
   // Find matching branch data based on location ID
   const branch = BRANCHES_DATA.find(b => {
     const branchName = b.name.toLowerCase();
@@ -55,7 +57,26 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
           <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
             {location.intro.map((paragraph, index) => (
               <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                {paragraph}
+                {paragraph.includes('candid wedding photography') ? (
+                  <>
+                    {paragraph.split('candid wedding photography').map((part, partIndex, array) => {
+                      if (partIndex === array.length - 1) return part;
+                      return (
+                        <React.Fragment key={partIndex}>
+                          {part}
+                          <button
+                            onClick={() => navigate('/wedding-photography')}
+                            className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                          >
+                            candid wedding photography
+                          </button>
+                        </React.Fragment>
+                      );
+                    })}
+                  </>
+                ) : (
+                  paragraph
+                )}
               </p>
             ))}
           </div>

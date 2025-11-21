@@ -488,6 +488,11 @@ export const YOUTUBE_VIDEOS: YouTubeVideo[] = [
     url: 'https://youtu.be/-FJ0EmRwcPU?si=9OZ31NIO_0SgLhsE',
     title: 'Lasya Sree - Half Saree Function Cinematic Photography'
   },
+  { 
+    id: '11', 
+    url: 'https://youtu.be/ZvADSLUuSbU?si=iJhZRuYd4kKhdgc3',
+    title: "Sowmya Rao & Karthik Rao's Engagement teaser song"
+  },
 ];
 
 export const BRANCHES_DATA: Branch[] = [
@@ -496,7 +501,7 @@ export const BRANCHES_DATA: Branch[] = [
     specialty: 'Best Wedding Photography | Pre-wedding photoshoots | All Event Photographers',
     address: 'Executive Towers, Mansa, Near Miyapur new police bhel, Kondapur, Telangana 500084',
     phone: '+91 70369 29247',
-    email: 'hyderabad@rangasurya.in',
+    email: 'rangasuryaphotography@gmail.com',
     mapLink: 'https://www.google.com/maps/place/Hyderabad+Best+Wedding+photography+%7C+Pre-wedding+photoshoots+%7C+All+Event+Photographers+-+Ranga+surya+photography/@17.4627596,78.3502543,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb93ff06f8a2ad:0xbab020163fbd5dac!8m2!3d17.4627596!4d78.3502543!16s%2Fg%2F11jpm0l7zv?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D'
   },
   {
@@ -504,7 +509,7 @@ export const BRANCHES_DATA: Branch[] = [
     specialty: 'Best Wedding Photographers | Pre-wedding cinematographer',
     address: 'GP74+FHQ, Near, 100 Feet Rd, beside alankar sweets & bakery, signal, Enikepadu, Vijayawada, Andhra Pradesh 521108',
     phone: '+91 99598 90543',
-    email: 'vijayawada@rangasurya.in',
+    email: 'rangasuryaphotography@gmail.com',
     mapLink: 'https://maps.app.goo.gl/riDLp4YJwxA5x2NN7?g_st=ipc'
   },
   {
@@ -512,7 +517,7 @@ export const BRANCHES_DATA: Branch[] = [
     specialty: 'Wedding Photography & Cinematography',
     address: '50-49-43/C, TPT Colony, Balayya Sastri Layout, Seethammadara, Visakhapatnam, Andhra Pradesh 530013',
     phone: '+91 91336 64556',
-    email: 'vizag@rangasurya.in',
+    email: 'rangasuryaphotography@gmail.com',
     mapLink: 'https://maps.app.goo.gl/QWWACUf3WEMXoPEM7?g_st=ipc'
   },
   {
@@ -520,7 +525,7 @@ export const BRANCHES_DATA: Branch[] = [
     specialty: 'Best Wedding Photographers | Pre-wedding shoots',
     address: 'D.no : 9, 10-5, Subhash chandra bose street, opp. chandra bhanu line, Navabharat Nagar, Rajamahendravaram, Andhra Pradesh 533101',
     phone: '+91 91336 64556',
-    email: 'rajahmundry@rangasurya.in',
+    email: 'rangasuryaphotography@gmail.com',
     mapLink: 'https://maps.app.goo.gl/i6rjcQ34Hj8sKWUV8?g_st=ipc'
   },
   {
@@ -528,7 +533,7 @@ export const BRANCHES_DATA: Branch[] = [
     specialty: 'Wedding Photographers | Pre Wedding shoot | Birthday shoots',
     address: 'Nataraj Theater, Near, Jp road, opposite Hailland shoemart, Balusumoodi, Bhimavaram, Andhra Pradesh 534202',
     phone: '+91 94403 28796',
-    email: 'bhimavaram@rangasurya.in',
+    email: 'rangasuryaphotography@gmail.com',
     mapLink: 'https://maps.app.goo.gl/1Q6Vk9MAgp4tvKcLA?g_st=ipc'
   }
 ];

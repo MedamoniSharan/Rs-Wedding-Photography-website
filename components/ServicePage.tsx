@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from './icons';
 import { useTheme } from '../App';
 import SEO from './SEO';
@@ -78,13 +79,14 @@ const getSEOMetadata = (serviceTitle: string) => {
 
 const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) => {
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const seoData = getSEOMetadata(service.title);
 
   const getServiceContent = (title: string) => {
     const contentMap: Record<string, { description: string; subtitle?: string; whyChooseUs: string[]; extraContent?: string }> = {
       'Wedding Photography': {
         subtitle: 'Capturing the Magic of Your Special Day',
-        description: "With over 30 years of experience, Ranga Surya Photography has been a trusted name in wedding photography across Andhra Pradesh, Telangana, and all over India. Our team specializes in transforming every emotion, smile, and ritual into timeless memories that you can cherish forever. Every wedding is unique and so is our approach. From intimate traditional ceremonies to grand destination weddings, we focus on capturing every moment with authenticity and elegance. Our experienced photographers and cinematographers ensure each frame tells your story beautifully. At Ranga Surya Photography, we believe that a wedding photoshoot should go beyond pictures, it should reflect your emotions, culture, and love story. We use advanced equipment and creative techniques to deliver high-quality images and cinematic visuals that stand out for their clarity, color, and detail.",
+        description: "With over 30 years of experience, Ranga Surya Photography has been a trusted name in wedding photography across Andhra Pradesh, Telangana, and all over India. Our team specializes in transforming every emotion, smile, and ritual into timeless memories that you can cherish forever. Every wedding is unique and so is our approach. From intimate traditional ceremonies to grand destination weddings, we focus on capturing every moment with authenticity and elegance. Our experienced photographers and cinematographers ensure each frame tells your story beautifully. At Ranga Surya Photography, we believe that a wedding photoshoot should go beyond pictures, it should reflect your emotions, culture, and love story. We use advanced equipment and creative techniques to deliver high-quality images and cinematic visuals that stand out for their clarity, color, and detail. Looking for professional wedding photography in Hyderabad? Our team brings expertise and creativity to capture your special moments.",
         whyChooseUs: [
           'Over 30+ years of professional experience in wedding shoots',
           'Expertise across Andhra Pradesh, Telangana, and pan India locations',
@@ -176,7 +178,128 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
               </p>
             )}
             <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 space-y-4">
-              <p>{displayDescription}</p>
+              {service.title === 'Wedding Photography' ? (
+                <p>
+                  {displayDescription.split('wedding photography in Hyderabad').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/wedding-photography-in-hyderabad')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          wedding photoshoot
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Pre-Wedding Photography' ? (
+                <p>
+                  {displayDescription.split('wedding photographers').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/wedding-photography')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          wedding photographers
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Candid Photography' ? (
+                <p>
+                  {displayDescription.split('pre-wedding shoots').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/pre-wedding-photography')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          pre-wedding shoots
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Half Saree Photography' ? (
+                <p>
+                  {displayDescription.split('candid photoshoots').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/candid-photography')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          candid photoshoots
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Event Photography' ? (
+                <p>
+                  {displayDescription.split('wedding photoshoots').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/wedding-photography-in-vijayawada')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          wedding photoshoots
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Celebrate Photography' ? (
+                <p>
+                  {displayDescription.split('creative photography').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          creative photography
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : service.title === 'Mehendi Photography' ? (
+                <p>
+                  {displayDescription.split('candid moments').map((part, index, array) => {
+                    if (index === array.length - 1) return part;
+                    return (
+                      <React.Fragment key={index}>
+                        {part}
+                        <button
+                          onClick={() => navigate('/candid-photography')}
+                          className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                        >
+                          candid moments
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+                </p>
+              ) : (
+                <p>{displayDescription}</p>
+              )}
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -225,7 +348,28 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                 {whyChooseUsItems.map((item, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="text-golden-beige mr-3">✓</span>
-                    <span>{item}</span>
+                    <span>
+                      {service.title === 'Haldi Photography' && item.includes('best wedding photoshoots') ? (
+                        <>
+                          {item.split('best wedding photoshoots').map((part, index, array) => {
+                            if (index === array.length - 1) return part;
+                            return (
+                              <React.Fragment key={index}>
+                                {part}
+                                <button
+                                  onClick={() => navigate('/wedding-photography')}
+                                  className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
+                                >
+                                  best wedding photoshoots
+                                </button>
+                              </React.Fragment>
+                            );
+                          })}
+                        </>
+                      ) : (
+                        item
+                      )}
+                    </span>
                   </li>
                 ))}
               </ul>

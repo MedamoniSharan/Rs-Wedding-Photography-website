@@ -41,6 +41,9 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
     if (section === 'about') {
       navigate('/about');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (section === 'videos') {
+      navigate('/wedding-cinematography');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (section !== 'services') {
       navigate('/');
       setTimeout(() => {
@@ -67,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
     { section: 'gallery', label: 'Gallery' },
     { section: 'services', label: 'Services' },
     { section: 'about', label: 'About Us' },
-    { section: 'videos', label: 'Cinematography' },
+    { section: 'videos', label: 'Wedding Cinematography' },
     { section: 'contact', label: 'Contact' },
   ];
 
