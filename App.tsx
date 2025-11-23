@@ -89,10 +89,10 @@ const AppContent: React.FC = () => {
       '@context': 'https://schema.org',
       '@type': 'PhotographyBusiness',
       name: 'Ranga Surya Photography',
-      description: 'Professional wedding photography in Hyderabad by Ranga Surya Photography. 30+ years of experience in wedding photoshoots and candid photography.',
-      url: 'https://rangasurya.in',
-      logo: 'https://rangasurya.in/white_logo_design12.png',
-      image: 'https://rangasurya.in/IMG_3061.JPG',
+      description: 'Ranga Surya Photography offers 30+ years of expertise in wedding photography , candid photoshoots, pre-wedding shoots , Mehendi & events photography across india',
+      url: 'https://rangasurya.com',
+      logo: 'https://rangasurya.com/white_logo_design12.png',
+      image: 'https://rangasurya.com/IMG_3061.JPG',
       telephone: '+917036929247',
       address: {
         '@type': 'PostalAddress',
@@ -160,11 +160,11 @@ const AppContent: React.FC = () => {
         <Route path="/" element={
           <>
             <SEO 
-              title="Wedding Photography in Hyderabad | Ranga Surya Photography"
-              description="Professional wedding photography in Hyderabad by Ranga Surya Photography. 30+ years of experience in wedding photoshoots and candid photography."
+              title="Ranga Surya Photography |  Wedding, Candid & Pre-Wedding Shoots"
+              description="Ranga Surya Photography offers 30+ years of expertise in wedding photography , candid photoshoots, pre-wedding shoots , Mehendi & events photography across india"
               keywords="wedding photography hyderabad, wedding photographers hyderabad, pre-wedding photography, haldi photography, half saree photography, candid photography, event photography, wedding cinematography, best wedding photographers andhra pradesh, wedding photographers telangana, ranga surya photography"
-              image="https://rangasurya.in/IMG_3061.JPG"
-              url="https://rangasurya.in/"
+              image="https://rangasurya.com/IMG_3061.JPG"
+              url="https://rangasurya.com/"
             />
             <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
               <Header activeSection={activeSection} scrollToSection={scrollToSection} />
