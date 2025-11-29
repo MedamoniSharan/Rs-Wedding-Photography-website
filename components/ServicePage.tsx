@@ -13,7 +13,7 @@ interface ServicePageProps {
 
 // SEO metadata mapping for each service
 const getSEOMetadata = (serviceTitle: string) => {
-  const baseUrl = 'https://rangasurya.com';
+  const baseUrl = 'https://rangasuryaphotography.com';
   const defaultImage = `${baseUrl}/IMG_3061.JPG`;
   
   const seoMap: Record<string, { title: string; description: string; keywords: string; image?: string; url: string }> = {

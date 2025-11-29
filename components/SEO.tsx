@@ -13,8 +13,8 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords,
-  image = 'https://rangasurya.com/IMG_3061.JPG',
-  url = 'https://rangasurya.com/',
+  image = 'https://rangasuryaphotography.com/IMG_3061.JPG',
+  url = 'https://rangasuryaphotography.com/',
   type = 'website'
 }) => {
   useEffect(() => {

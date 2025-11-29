@@ -54,8 +54,8 @@ const WeddingCinematographyPage: React.FC = () => {
         title="Wedding Cinematography | Candid & Cinematic Wedding Films"
         description="Experience premium wedding cinematography with cinematic films, candid storytelling, drone shots & pre-wedding videos. Capture your wedding like a movie."
         keywords="wedding cinematography, wedding videography, wedding videos, cinematic wedding films, wedding highlights, wedding trailer, professional wedding videography, drone cinematography, pre-wedding cinematic film"
-        image="https://rangasurya.com/IMG_3061.JPG"
-        url="https://rangasurya.com/wedding-cinematography"
+        image="https://rangasuryaphotography.com/IMG_3061.JPG"
+        url="https://rangasuryaphotography.com/wedding-cinematography"
       />
       <div className="min-h-screen bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300">
         <div className="container mx-auto px-6 py-20">

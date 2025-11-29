@@ -7,8 +7,8 @@ export const LOCATIONS_DATA: LocationData[] = [
     metaTitle: 'Best Wedding Photographer in Hyderabad | Top Wedding Photography - Ranga Surya Photography',
     metaDescription: 'Looking for the best wedding photography in Hyderabad? We offer candid wedding shoots, pre-wedding sessions, family event photography, and premium cinematic wedding films. Book professional photographers near you.',
     keywords: 'wedding photographer hyderabad, best wedding photography hyderabad, candid wedding photography, pre-wedding shoots hyderabad, wedding photographers near me, cinematic wedding films, professional wedding photographers',
-    image: 'https://rangasurya.com/img_2597.jpg',
-    url: 'https://rangasurya.com/wedding-photography-in-hyderabad',
+    image: 'https://rangasuryaphotography.com/img_2597.jpg',
+    url: 'https://rangasuryaphotography.com/wedding-photography-in-hyderabad',
     h1: 'Wedding Photographer in Hyderabad',
     intro: [
       'If you are looking for the best wedding photography in Hyderabad, our team brings a perfect blend of creativity, technology, and storytelling to your big day. Weddings are once-in-a-lifetime moments, and our photographers capture them with emotional depth, cultural richness, and cinematic beauty.',
@@ -90,8 +90,8 @@ export const LOCATIONS_DATA: LocationData[] = [
     metaTitle: 'Best Wedding Photographer in Vijayawada | Candid Wedding Photography & Cinematic Shoots',
     metaDescription: 'Searching for professional wedding photographers in Vijayawada? We offer candid wedding photography, pre-wedding shoots, and event photography with cinematic quality.',
     keywords: 'wedding photographer vijayawada, best wedding photography vijayawada, candid wedding photography vijayawada, pre-wedding shoots, cinematic wedding films, professional photographers vijayawada',
-    image: 'https://rangasurya.com/img_2597.jpg',
-    url: 'https://rangasurya.com/wedding-photography-in-vijayawada',
+    image: 'https://rangasuryaphotography.com/img_2597.jpg',
+    url: 'https://rangasuryaphotography.com/wedding-photography-in-vijayawada',
     h1: 'Wedding Photographer in Vijayawada',
     intro: [
       'When it comes to capturing timeless wedding memories, our studio stands among the top wedding photography teams in Vijayawada. We document emotions, traditions, and celebrations with artistic precision and modern techniques.',
@@ -169,8 +169,8 @@ export const LOCATIONS_DATA: LocationData[] = [
     metaTitle: 'Best Wedding Photographer in Bhimavaram | Traditional Telugu Wedding Photography',
     metaDescription: 'Searching for professional wedding photographers in Bhimavaram? We capture Telugu weddings, candid moments, and cultural celebrations with the finest detail and quality.',
     keywords: 'wedding photographer bhimavaram, traditional telugu wedding photography, wedding photographers bhimavaram, candid wedding photography, telugu wedding rituals, pellikuthuru photography',
-    image: 'https://rangasurya.com/img_2597.jpg',
-    url: 'https://rangasurya.com/wedding-photography-in-bhimavaram',
+    image: 'https://rangasuryaphotography.com/img_2597.jpg',
+    url: 'https://rangasuryaphotography.com/wedding-photography-in-bhimavaram',
     h1: 'Wedding Photographer in Bhimavaram',
     intro: [
       'Bhimavaram weddings are rich in culture, rituals, and family celebrations—and we capture them with heart and precision. Recognized among the best wedding photography teams in Bhimavaram, we document your big day with authentic emotions, vibrant colors, and cinematic storytelling.',
@@ -247,8 +247,8 @@ export const LOCATIONS_DATA: LocationData[] = [
     metaTitle: 'Best Wedding Photographer in Rajahmundry | Godavari Pre-Weddings & Candid Photography',
     metaDescription: 'Looking for wedding photographers in Rajahmundry? We specialize in candid photography, cinematic videography, Godavari river-themed pre-wedding shoots, and family event coverage.',
     keywords: 'wedding photographer rajahmundry, godavari pre-wedding shoots, candid wedding photography rajahmundry, cinematic wedding videography, godavari river photography, wedding photographers rajahmundry',
-    image: 'https://rangasurya.com/img_2597.jpg',
-    url: 'https://rangasurya.com/wedding-photography-in-rajahmundry',
+    image: 'https://rangasuryaphotography.com/img_2597.jpg',
+    url: 'https://rangasuryaphotography.com/wedding-photography-in-rajahmundry',
     h1: 'Wedding Photographer in Rajahmundry',
     intro: [
       'Known for its heritage, Godavari River beauty, and grand Telugu weddings, Rajahmundry offers the perfect backdrop for stunning photography. As a top wedding photographer in Rajahmundry, we blend culture, nature, and emotions into elegant wedding memories.',
