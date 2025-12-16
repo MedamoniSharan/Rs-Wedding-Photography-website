@@ -4,6 +4,7 @@ import { ArrowLeftIcon } from './icons';
 import SEO from './SEO';
 import { BRANCHES_DATA } from '../constants';
 import type { LocationData } from '../types';
+import Breadcrumbs from './Breadcrumbs';
 
 interface LocationPageProps {
   location: LocationData;
@@ -29,6 +30,22 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
     return branchName.includes(locationName) || locationName.includes(branchName.split(' ')[0]);
   });
 
+  const getLocationBreadcrumbLabel = () => {
+    const id = location.id.toLowerCase();
+    const prefix = 'wedding-photography-in-';
+
+    if (id.startsWith(prefix)) {
+      const citySlug = id.replace(prefix, '');
+      const cityName = citySlug
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      return `Wedding Photography ${cityName}`;
+    }
+
+    return location.h1;
+  };
+
   return (
     <>
       <SEO 
@@ -40,6 +57,13 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
       />
       <div className="min-h-screen bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300">
         <div className="container mx-auto px-6 py-20 max-w-4xl">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', to: '/' },
+              { label: 'Locations' },
+              { label: getLocationBreadcrumbLabel() },
+            ]}
+          />
           <button
             onClick={onBack}
             className="inline-flex items-center text-golden-beige hover:text-golden-beige/80 mb-8 transition-colors group"
@@ -65,7 +89,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, onBack }) => {
                         <React.Fragment key={partIndex}>
                           {part}
                           <button
-                            onClick={() => navigate('/wedding-photography')}
+                            onClick={() => navigate('/services/wedding-photography')}
                             className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                           >
                             candid wedding photography

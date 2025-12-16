@@ -9,7 +9,7 @@ const ServiceCard: React.FC<{ service: Service; className?: string }> = ({ servi
   
   const handleClick = () => {
     if (service.id) {
-      navigate(`/${service.id}`);
+      navigate(`/services/${service.id}`);
     }
   };
 

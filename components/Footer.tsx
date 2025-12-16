@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
   const navigate = useNavigate();
 
   const handleServiceClick = (serviceId: string) => {
-    navigate(`/${serviceId}`);
+    navigate(`/services/${serviceId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
@@ -112,7 +112,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/wedding-photography-in-hyderabad');
+                    navigate('/locations/wedding-photography-in-hyderabad');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -123,7 +123,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/wedding-photography-in-vijayawada');
+                    navigate('/locations/wedding-photography-in-vijayawada');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -134,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/wedding-photography-in-bhimavaram');
+                    navigate('/locations/wedding-photography-in-bhimavaram');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
@@ -145,12 +145,29 @@ const Footer: React.FC<FooterProps> = ({ scrollToSection }) => {
               <li>
                 <button
                   onClick={() => {
-                    navigate('/wedding-photography-in-rajahmundry');
+                    navigate('/locations/wedding-photography-in-rajahmundry');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
                 >
                   Wedding Photographer in Rajahmundry
+                </button>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold text-charcoal-gray dark:text-white mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li>
+                <button
+                  onClick={() => {
+                    navigate('/privacy-policy');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-golden-beige transition-colors duration-200 text-left"
+                >
+                  Privacy Policy
                 </button>
               </li>
             </ul>

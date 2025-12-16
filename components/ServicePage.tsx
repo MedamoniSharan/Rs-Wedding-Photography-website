@@ -4,6 +4,7 @@ import { ArrowLeftIcon } from './icons';
 import { useTheme } from '../App';
 import SEO from './SEO';
 import type { Service } from '../types';
+import Breadcrumbs from './Breadcrumbs';
 
 interface ServicePageProps {
   service: Service;
@@ -151,6 +152,13 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
       />
       <div className="min-h-screen bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300">
         <div className="container mx-auto px-6 py-20">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', to: '/' },
+            { label: 'Services', onClick: onBack },
+            { label: service.title },
+          ]}
+        />
         <button
           onClick={onBack}
           className="inline-flex items-center text-golden-beige hover:text-golden-beige/80 mb-8 transition-colors group"
@@ -186,7 +194,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/wedding-photography-in-hyderabad')}
+                          onClick={() => navigate('/locations/wedding-photography-in-hyderabad')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           wedding photoshoot
@@ -203,7 +211,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/wedding-photography')}
+                          onClick={() => navigate('/services/wedding-photography')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           wedding photographers
@@ -220,7 +228,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/pre-wedding-photography')}
+                          onClick={() => navigate('/services/pre-wedding-photography')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           pre-wedding shoots
@@ -237,7 +245,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/candid-photography')}
+                          onClick={() => navigate('/services/candid-photography')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           candid photoshoots
@@ -254,7 +262,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/wedding-photography-in-vijayawada')}
+                          onClick={() => navigate('/locations/wedding-photography-in-vijayawada')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           wedding photoshoots
@@ -288,7 +296,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ service, images, onBack }) =>
                       <React.Fragment key={index}>
                         {part}
                         <button
-                          onClick={() => navigate('/candid-photography')}
+                          onClick={() => navigate('/services/candid-photography')}
                           className="text-golden-beige hover:text-golden-beige/80 underline font-semibold transition-colors"
                         >
                           candid moments

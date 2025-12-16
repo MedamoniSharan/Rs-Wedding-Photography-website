@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
@@ -17,6 +17,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import SEO from './components/SEO';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import { SERVICES_DATA, YOUTUBE_VIDEOS, CLIENT_REVIEWS, FAQ_DATA } from './constants';
 import { LOCATIONS_DATA } from './locationData';
 import type { Section } from './types';
@@ -203,31 +204,81 @@ const AppContent: React.FC = () => {
             <FloatingWhatsApp />
           </div>
         } />
-        <Route path="/:id" element={<DynamicRoute />} />
+        <Route path="/privacy-policy" element={
+          <div className="bg-white dark:bg-charcoal-gray text-charcoal-gray dark:text-gray-300 font-lato antialiased selection:bg-golden-beige selection:text-charcoal-gray">
+            <Header activeSection="home" scrollToSection={scrollToSection} />
+            <PrivacyPolicyPage />
+            <Footer scrollToSection={scrollToSection} />
+            <FloatingWhatsApp />
+          </div>
+        } />
+        <Route path="/services/:id" element={<ServiceRoute />} />
+        <Route path="/locations/:id" element={<LocationRoute />} />
+        <Route path="/:id" element={<LegacyDynamicRoute />} />
       </Routes>
     </>
   );
 };
 
-const DynamicRoute: React.FC = () => {
+const ServiceRoute: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const id = location.pathname.slice(1); // Remove leading '/'
-  
-  // Check if it's a service
-  const service = SERVICES_DATA.find(s => s.id === id);
+  const { id } = useParams<{ id: string }>();
+
+  if (!id) {
+    navigate('/', { replace: true });
+    return null;
+  }
+
+  const service = SERVICES_DATA.find((s) => s.id === id);
   if (service) {
     return <ServiceContent service={service} navigate={navigate} />;
   }
   
-  // Check if it's a location
-  const locationData = LOCATIONS_DATA.find(l => l.id === id);
+  navigate('/', { replace: true });
+  return null;
+};
+
+const LocationRoute: React.FC = () => {
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
+
+  if (!id) {
+    navigate('/', { replace: true });
+    return null;
+  }
+
+  const locationData = LOCATIONS_DATA.find((l) => l.id === id);
   if (locationData) {
     return <LocationContent location={locationData} navigate={navigate} />;
   }
   
-  // If neither matches, redirect to home
-  navigate('/');
+  navigate('/', { replace: true });
+  return null;
+};
+
+const LegacyDynamicRoute: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const id = location.pathname.slice(1); // Remove leading '/'
+
+  if (!id) {
+    navigate('/', { replace: true });
+    return null;
+  }
+
+  const service = SERVICES_DATA.find((s) => s.id === id);
+  if (service) {
+    navigate(`/services/${id}`, { replace: true });
+    return null;
+  }
+
+  const locationData = LOCATIONS_DATA.find((l) => l.id === id);
+  if (locationData) {
+    navigate(`/locations/${id}`, { replace: true });
+    return null;
+  }
+
+  navigate('/', { replace: true });
   return null;
 };
 
