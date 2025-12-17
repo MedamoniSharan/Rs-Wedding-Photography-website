@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, scrollToSection }) => {
   };
 
   const handleServiceClick = (serviceId: string) => {
-    navigate(`/${serviceId}`);
+    navigate(`/services/${serviceId}`);
     setIsMobileMenuOpen(false);
     setIsServicesDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
